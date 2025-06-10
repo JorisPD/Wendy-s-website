@@ -59,7 +59,17 @@ p, li {
   background: linear-gradient(145deg, #ffe6f0, #fff5fa);
   padding: 3em 1em;
   text-align: center;
-  animation: fadeIn 1.5s ease-in;
+  animation: fadeIn 1.5s ease-in forwards; /* Add 'forwards' */
+}
+
+/* Define the fadeIn keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ===== Features ===== */
