@@ -1,1 +1,1 @@
-# Wendy-s-Kinderkapsalon
+# Wendy's website | design & hosting door mij.
