@@ -1,11 +1,10 @@
 /* ===== Algemene instellingen ===== */
 body {
-  margin: 0;
-  font-family: 'Quicksand', 'Comic Neue', cursive, sans-serif;
-  background-color: #fff8f4;
-  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff8f4;
+  color: #222;
   line-height: 1.6;
-  scroll-behavior: smooth;
+  margin: 0;
   padding: 0;
 }
 
