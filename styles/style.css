@@ -346,3 +346,13 @@ a:focus, button:focus, .btn:focus, .feature:focus-within {
   outline: 2px solid #ffd700;
   outline-offset: 2px;
 }
+
+/* Add to styles/style.css */
+.booking-widget-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
