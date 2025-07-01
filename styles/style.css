@@ -122,6 +122,11 @@ p, li {
   transform: translateY(20px);
   animation: sectionFadeIn 1.2s ease forwards;
   animation-delay: 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
 }
 
 /* ===== Workshops ===== */
@@ -183,6 +188,10 @@ p, li {
   border-radius: 1em;
   max-width: 600px;
   box-shadow: 0 0 10px rgba(255,105,180,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== Buttons ===== */
@@ -279,7 +288,8 @@ h2::before {
 
 /* ===== Images (Gallery) ===== */
 img.fotogalerij,
-.gallery-grid img {
+.gallery-grid img,
+img.fun-image {
   width: 100%;
   max-width: 260px;
   border-radius: 1em;
@@ -289,12 +299,16 @@ img.fotogalerij,
   background: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .gallery-grid img:hover,
-.gallery-grid img:focus {
+.gallery-grid img:focus,
+img.fun-image:hover,
+img.fun-image:focus {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 0 20px #ffb6c1, 0 0 30px #ffd700;
   outline: 2px solid #ffd700;
 }
+
 
 /* ===== Gallery Section (NEW) ===== */
 .gallery-section {
