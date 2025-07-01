@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotogalerij | Wendy's Kinderkapsalon</title>
+  <meta name="description" content="Bekijk de vrolijke sfeer van Wendy's Kinderkapsalon in onze fotogalerij!">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+    /* Extra styling for the gallery section (matches your theme) */
+    .gallery-section {
+      background: #fff0f5;
+      padding: 2em 1em;
+      text-align: center;
+      border-radius: 1.5em;
+      box-shadow: 0 0 18px rgba(255,105,180,0.10);
+      margin: 2em auto;
+      max-width: 1200px;
+      animation: sectionFadeIn 1.2s ease forwards;
+    }
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 2em;
+    }
+    .gallery-grid img {
+      border-radius: 1em;
+      box-shadow: 0 4px 12px rgba(255,182,193,0.16);
+      width: 260px;
+      height: 200px;
+      object-fit: cover;
+      background: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 0.5em;
+    }
+    .gallery-grid img:hover,
+    .gallery-grid img:focus {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 20px #ffb6c1, 0 0 30px #ffd700;
+      outline: 2px solid #ffd700;
+    }
+    @media (max-width: 700px) {
+      .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gallery-grid img {
+        width: 95vw;
+        height: 30vw;
+        max-width: 99vw;
+        min-height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <span>📞 06 43 20 36 55</span>
+      <span>📧 wendyskinderkapsalon@ziggo.nl</span>
+    </div>
+    <div class="navbar">
+      <img src="https://wendyskinderkapsalon.nl/wp-content/uploads/2017/11/logo-600x181.png" alt="Wendy's logo" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+        <a href="reserveringen.html">Reserveer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="gallery-section">
+      <h2>Fotogalerij</h2>
+      <p>Bekijk hieronder de vrolijke sfeer van onze kapsalon en feestjes!</p>
+      <div class="gallery-grid">
+        <!-- Vervang de src attributen door jouw eigen afbeeldingen -->
+        <img src="images/foto1.jpg" alt="Kinderen knutselen in de salon" loading="lazy">
+        <img src="images/foto2.jpg" alt="Feestje met glitter en ballonnen" loading="lazy">
+        <img src="images/foto3.jpg" alt="Unieke kapsels en blije gezichten" loading="lazy">
+        <img src="images/foto4.jpg" alt="Team aan het werk" loading="lazy">
+        <img src="images/foto5.jpg" alt="Spelen in de speelhoek" loading="lazy">
+        <!-- Voeg hier meer afbeeldingen toe als je wilt -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Wendy’s Kinderkapsalon | Ontwerp &amp; hosting door Joris ✂️</p>
+  </footer>
+</body>
+</html>
