@@ -9,22 +9,32 @@ body {
 }
 
 /* ===== Typography ===== */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #ff69b4;
   text-align: center;
   margin-bottom: 0.5em;
   position: relative;
 }
-h1::after, h2::after {
-  content: ' ✨';
+h1::after,
+h2::after {
+  content: " ✨";
   animation: sparkle 2s infinite alternate;
 }
 @keyframes sparkle {
-  0% { opacity: 1; text-shadow: 0 0 5px #ff69b4, 0 0 10px #ffd700; }
-  100% { opacity: 0.7; text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffffe0; }
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ffd700;
+  }
+  100% {
+    opacity: 0.7;
+    text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffffe0;
+  }
 }
 
-p, li {
+p,
+li {
   font-size: 1.1rem;
   text-align: center;
 }
@@ -75,8 +85,12 @@ p, li {
   animation: heroFadeIn 1.5s ease-in forwards;
 }
 @keyframes heroFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ===== Features ===== */
@@ -101,7 +115,7 @@ p, li {
   background: white;
   border-radius: 1em;
   padding: 1.5em;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 280px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -126,11 +140,11 @@ p, li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; 
+  text-align: center;
 }
 
 /* ===== Workshops ===== */
-.workshops {
+.locatie2 {
   background: #e0ffff;
   padding: 2em 1em;
   text-align: center;
@@ -176,8 +190,14 @@ p, li {
 
 /* ===== Section FadeIn Animation ===== */
 @keyframes sectionFadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== Feest box ===== */
@@ -187,7 +207,7 @@ p, li {
   padding: 1.5em;
   border-radius: 1em;
   max-width: 600px;
-  box-shadow: 0 0 10px rgba(255,105,180,0.2);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,7 +215,8 @@ p, li {
 }
 
 /* ===== Buttons ===== */
-.btn, .button {
+.btn,
+.button {
   display: inline-block;
   background: #ff69b4;
   color: white;
@@ -212,26 +233,37 @@ p, li {
   cursor: pointer;
   outline: none;
 }
-.btn:focus, .button:focus {
+.btn:focus,
+.button:focus {
   outline: 2px solid #ffd700;
 }
-.btn:hover, .button:hover {
+.btn:hover,
+.button:hover {
   background: #ff1493;
 }
-.btn::before, .button::before {
+.btn::before,
+.button::before {
   content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 80%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 80%
+  );
   animation: glitter-move 3s infinite;
   pointer-events: none;
 }
 @keyframes glitter-move {
-  0% { transform: translate(0%, 0%) rotate(0deg); }
-  100% { transform: translate(100%, 100%) rotate(360deg); }
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(360deg);
+  }
 }
 
 /* ===== Footer ===== */
@@ -243,13 +275,20 @@ footer {
 }
 
 /* ===== Headings & Special Effects ===== */
-h1::after, h2::after {
-  content: ' ✨';
+h1::after,
+h2::after {
+  content: " ✨";
   animation: sparkle 2s infinite alternate;
 }
 @keyframes sparkle {
-  0% { opacity: 1; text-shadow: 0 0 5px #ff69b4, 0 0 10px #ffd700; }
-  100% { opacity: 0.7; text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffffe0; }
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ffd700;
+  }
+  100% {
+    opacity: 0.7;
+    text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffffe0;
+  }
 }
 
 /* Rainbow bar under h2 */
@@ -261,14 +300,25 @@ h2::before {
   height: 4px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, #ff69b4, #ffd700, #adff2f, #00ffff, #ff69b4);
+  background: linear-gradient(
+    90deg,
+    #ff69b4,
+    #ffd700,
+    #adff2f,
+    #00ffff,
+    #ff69b4
+  );
   border-radius: 2px;
   bottom: -10px;
   animation: rainbow 4s linear infinite;
 }
 @keyframes rainbow {
-  0% { background-position: 0%; }
-  100% { background-position: 100%; }
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
 
 /* ===== Responsive ===== */
@@ -281,7 +331,13 @@ h2::before {
   .navbar nav a {
     margin: 0 0.5em;
   }
-  .hero, .features, .feestjes, .workshops, .about, .team, .contact {
+  .hero,
+  .features,
+  .feestjes,
+  .workshops,
+  .about,
+  .team,
+  .contact {
     padding: 1.5em 0.5em;
   }
 }
@@ -293,7 +349,7 @@ img.fun-image {
   width: 100%;
   max-width: 260px;
   border-radius: 1em;
-  box-shadow: 0 4px 12px rgba(255,182,193,0.16);
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.16);
   margin-bottom: 0.5em;
   object-fit: cover;
   background: #fff;
@@ -309,14 +365,13 @@ img.fun-image:focus {
   outline: 2px solid #ffd700;
 }
 
-
 /* ===== Gallery Section ===== */
 .gallery-section {
   background: #fff0f5;
   padding: 2em 1em;
   text-align: center;
   border-radius: 1.5em;
-  box-shadow: 0 0 18px rgba(255,105,180,0.10);
+  box-shadow: 0 0 18px rgba(255, 105, 180, 0.1);
   margin: 2em auto;
   max-width: 1200px;
   animation: sectionFadeIn 1.2s ease forwards;
@@ -343,7 +398,10 @@ img.fun-image:focus {
 }
 
 /* ===== Accessibility: Focus Styles ===== */
-a:focus, button:focus, .btn:focus, .feature:focus-within {
+a:focus,
+button:focus,
+.btn:focus,
+.feature:focus-within {
   outline: 2px solid #ffd700;
   outline-offset: 2px;
 }
@@ -355,7 +413,7 @@ a:focus, button:focus, .btn:focus, .feature:focus-within {
   padding: 1.5rem;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
 /* ===== Iframe ===== */
@@ -364,7 +422,7 @@ a:focus, button:focus, .btn:focus, .feature:focus-within {
   margin: 2rem auto 0 auto;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
 .map-container iframe {
