@@ -9,13 +9,16 @@ body {
 }
 
 /* ===== Typography ===== */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #ff69b4;
   text-align: center;
   margin-bottom: 0.5em;
   position: relative;
 }
-h1::after, h2::after {
+h1::after,
+h2::after {
   content: " ✨";
   animation: sparkle 2s infinite alternate;
 }
@@ -30,7 +33,8 @@ h1::after, h2::after {
   }
 }
 
-p, li {
+p,
+li {
   font-size: 1.1rem;
   text-align: center;
 }
@@ -133,12 +137,23 @@ p, li {
   animation: sectionFadeIn 1.2s ease forwards;
 }
 .feestjes,
-.reserveer { animation-delay: 0.4s; background: #fff; }
-.locatie2 { animation-delay: 0.5s; background: #e0ffff; }
-.about    { animation-delay: 0.6s; background: #fdf5e6; }
-.team { animation-delay: 0.7s; background: #ffe4e1; }
-.contact
-  {
+.reserveer {
+  animation-delay: 0.4s;
+  background: #fff;
+}
+.locatie2 {
+  animation-delay: 0.5s;
+  background: #e0ffff;
+}
+.about {
+  animation-delay: 0.6s;
+  background: #fdf5e6;
+}
+.team {
+  animation-delay: 0.7s;
+  background: #ffe4e1;
+}
+.contact {
   animation-delay: 0.8s;
   background: linear-gradient(135deg, #f0f8ff, #ffe4e1);
   box-shadow: inset 0 0 30px rgba(255, 182, 193, 0.3);
@@ -201,13 +216,21 @@ p, li {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 80%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 80%
+  );
   animation: glitter-move 3s infinite;
   pointer-events: none;
 }
 @keyframes glitter-move {
-  0%   { transform: translate(0%, 0%) rotate(0deg); }
-  100% { transform: translate(100%, 100%) rotate(360deg); }
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(360deg);
+  }
 }
 
 /* ===== Footer ===== */
@@ -227,14 +250,25 @@ h2::before {
   height: 4px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, #ff69b4, #ffd700, #adff2f, #00ffff, #ff69b4);
+  background: linear-gradient(
+    90deg,
+    #ff69b4,
+    #ffd700,
+    #adff2f,
+    #00ffff,
+    #ff69b4
+  );
   border-radius: 2px;
   bottom: -10px;
   animation: rainbow 4s linear infinite;
 }
 @keyframes rainbow {
-  0%   { background-position: 0%; }
-  100% { background-position: 100%; }
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
 
 /* ===== Gallery ===== */
@@ -350,8 +384,7 @@ button:focus,
   .workshops,
   .about,
   .team,
-  .contact
-  .reserveer {
+  .contact .reserveer {
     padding: 1.5em 0.5em;
   }
 }
