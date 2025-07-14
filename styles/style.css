@@ -124,18 +124,21 @@ p, li {
 .locatie2,
 .about,
 .team,
-.contact {
+.contact,
+.reserveer {
   padding: 2em 1em;
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
   animation: sectionFadeIn 1.2s ease forwards;
 }
-.feestjes { animation-delay: 0.4s; background: #fff; }
+.feestjes,
+.reserveer { animation-delay: 0.4s; background: #fff; }
 .locatie2 { animation-delay: 0.5s; background: #e0ffff; }
 .about    { animation-delay: 0.6s; background: #fdf5e6; }
-.team     { animation-delay: 0.7s; background: #ffe4e1; }
-.contact  {
+.team { animation-delay: 0.7s; background: #ffe4e1; }
+.contact
+  {
   animation-delay: 0.8s;
   background: linear-gradient(135deg, #f0f8ff, #ffe4e1);
   box-shadow: inset 0 0 30px rgba(255, 182, 193, 0.3);
@@ -289,6 +292,15 @@ img:not(.logo):not(.gallery-grid img):active {
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
+.feest-img {
+  height: 50%;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 1em;
+  margin-top: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* ===== Booking widget & Map ===== */
 .booking-widget-container {
   max-width: 600px;
@@ -338,7 +350,8 @@ button:focus,
   .workshops,
   .about,
   .team,
-  .contact {
+  .contact
+  .reserveer {
     padding: 1.5em 0.5em;
   }
 }
