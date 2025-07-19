@@ -235,11 +235,44 @@ li {
 
 /* ===== Footer ===== */
 footer {
-  background: #ffb6c1;
+  background: linear-gradient(145deg, #ffb6c1, #ff69b4);
   color: white;
   text-align: center;
-  padding: 1em;
+  padding: 1.5em;
+  border-top: 4px solid #ffd700;
+  box-shadow: 0 -3px 15px rgba(255, 105, 180, 0.3);
+  position: relative;
 }
+
+footer .socials {
+  margin-top: 0.5em;
+}
+
+footer .socials a {
+  margin: 0 8px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+footer .socials img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+footer .socials img:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 15px #ffd700, 0 0 30px #ff69b4;
+}
+
+footer p {
+  margin-top: 1em;
+  font-size: 0.9rem;
+  color: #fffaf0;
+}
+
 
 /* ===== Rainbow bar under h2 ===== */
 h2::before {
