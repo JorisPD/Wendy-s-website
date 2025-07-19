@@ -277,7 +277,6 @@ footer p {
   color: #fffaf0;
 }
 
-
 /* ===== Rainbow bar under h2 ===== */
 h2::before {
   content: "";
