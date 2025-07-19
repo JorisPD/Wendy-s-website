@@ -246,6 +246,10 @@ footer {
 
 footer .socials {
   margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* Don't let them wrap to the next line */
+  gap: 10px; /* Even spacing between icons */
 }
 
 footer .socials a {
