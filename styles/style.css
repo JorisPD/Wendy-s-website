@@ -408,6 +408,15 @@ img:not(.logo):not(.gallery-grid img):active {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.booking-widget-container > * {
+  flex: 0 0 auto;
 }
 
 .map-container {
