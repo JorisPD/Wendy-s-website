@@ -215,7 +215,10 @@ li {
 /* ===== Buttons ===== */
 .btn,
 .button {
-  display: inline-block;
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+  width: fit-content;
   background: #ff69b4;
   color: white;
   padding: 0.7em 1.5em;
