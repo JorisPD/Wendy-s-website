@@ -1,9 +1,23 @@
+/* =========================================================
+   Wendy's Kinderkapsalon – Modernized Styling (2025)
+   ========================================================= */
+
+/* ===== Fonts ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap");
+
+/* ===== Kleurenpalet =====
+   Primair:   #FF86C8  (zacht roze)
+   Secundair: #FFE8F2  (lichte achtergrond)
+   Accent:    #FFD95C  (warm geel)
+   Tekst:     #333333
+   ========================================================= */
+
 /* ===== Algemene instellingen ===== */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #fff8f4;
-  color: #222;
-  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  background: #ffe8f2;
+  color: #333;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
 }
@@ -12,36 +26,34 @@ body {
 h1,
 h2,
 h3 {
-  color: #ff69b4;
+  font-family: "Poppins", sans-serif;
+  color: #ff86c8;
   text-align: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
+  font-weight: 600;
   position: relative;
 }
-h1::after,
-h2::after {
-  content: " ✨";
-  animation: sparkle 2s infinite alternate;
-}
-@keyframes sparkle {
-  0% {
-    opacity: 1;
-    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ffd700;
-  }
-  100% {
-    opacity: 0.7;
-    text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffffe0;
-  }
+
+h2::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ffd95c;
+  margin: 0.5em auto 1em;
+  border-radius: 4px;
 }
 
 p,
 li {
   font-size: 1.1rem;
   text-align: center;
+  color: #444;
 }
 
 /* ===== Header ===== */
 .topbar {
-  background: #ffb6c1;
+  background: #ff86c8;
   padding: 0.5em;
   text-align: center;
   font-size: 0.9rem;
@@ -52,52 +64,55 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #ff69b4;
+  background: #fff;
   padding: 1em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
+
 .navbar .logo {
-  max-width: 200px;
+  max-width: 180px;
   margin-bottom: 0.5em;
 }
+
 .navbar nav a {
-  color: white;
+  color: #333;
   margin: 0 1em;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: color 0.3s;
 }
-.navbar nav a:focus,
+
 .navbar nav a:hover {
-  color: #ffd700;
-  text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4;
-  outline: 2px solid #ffd700;
+  color: #ff86c8;
 }
 
 /* ===== Hero sectie ===== */
 .hero {
-  background: linear-gradient(145deg, #ffe6f0, #fff5fa);
-  padding: 3em 1em;
+  background: #fff;
+  padding: 4em 1.5em;
   text-align: center;
-  opacity: 0;
-  animation: heroFadeIn 1.5s ease-in forwards;
+  border-radius: 0 0 2em 2em;
+  animation: fadeIn 1.5s ease;
 }
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+
+.hero img {
+  max-width: 95%;
+  height: auto;
+  margin-top: 2em;
+  border-radius: 1.2em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.02);
 }
 
 /* ===== Features ===== */
 .features {
-  background-color: #fff0f5;
-  padding: 2em 1em;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: sectionFadeIn 1.2s ease forwards;
-  animation-delay: 0.3s;
+  background: #fff;
+  padding: 3em 1.5em;
+  text-align: center;
 }
 
 .feature-boxes {
@@ -107,200 +122,101 @@ li {
   gap: 2em;
   margin-top: 2em;
 }
+
 .feature {
-  background: white;
+  background: #ffe8f2;
   border-radius: 1em;
-  padding: 1.5em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2em 1.5em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   max-width: 280px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.feature:hover,
-.feature:focus-within {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #ff69b4, 0 0 30px #ffd700;
-  outline: 2px solid #ff69b4;
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 20px rgba(255, 134, 200, 0.2);
 }
 
-/* ===== Feestjes, Workshops, About, Team, Contact ===== */
-.feestjes,
+/* ===== Locatie / Feestjes secties ===== */
 .locatie2,
-.about,
-.team,
-.contact,
-.reserveer {
-  padding: 2em 1em;
+.feestjes {
+  padding: 3em 1.5em;
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: sectionFadeIn 1.2s ease forwards;
-}
-.feestjes,
-.reserveer {
-  animation-delay: 0.4s;
   background: #fff;
+  margin-top: 2em;
+  border-radius: 1.5em;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
 }
+
 .locatie2 {
-  animation-delay: 0.5s;
-  background: #e0ffff;
-}
-.about {
-  animation-delay: 0.6s;
-  background: #fdf5e6;
-}
-.team {
-  animation-delay: 0.7s;
-  background: #ffe4e1;
-}
-.contact {
-  animation-delay: 0.8s;
-  background: linear-gradient(135deg, #f0f8ff, #ffe4e1);
-  box-shadow: inset 0 0 30px rgba(255, 182, 193, 0.3);
+  background: #e9f9ff;
 }
 
-/* ===== Animaties ===== */
-@keyframes sectionFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.locatie2 h3 {
+  color: #ff86c8;
 }
 
-/* ===== Feest Box ===== */
-.feest-box {
-  background: #fff0f5;
-  margin: 1em auto;
-  padding: 1.5em;
+.feestjes img {
+  max-width: 95%;
   border-radius: 1em;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* === Nieuw lijstje design === */
-.feest-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.feest-box ul li {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.6em 0;
-  border-bottom: 1px solid #ddd;
-  font-weight: 500;
-  text-align: left;
-}
-
-.feest-box ul li:last-child {
-  border-bottom: none;
-}
-
-.feest-box ul b {
-  display: block;
-  margin: 1em 0 0.5em;
-  text-align: left;
-  font-size: 1.1rem;
-  color: #ff69b4;
+  margin-top: 1.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* ===== Buttons ===== */
 .btn,
 .button {
-  display: block;
-  margin: 1em auto;
-  text-align: center;
-  width: fit-content;
-  background: #ff69b4;
+  display: inline-block;
+  background: #ff86c8;
   color: white;
-  padding: 0.7em 1.5em;
-  border-radius: 2em;
+  padding: 0.8em 1.8em;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 1em;
   font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  position: relative;
-  overflow: hidden;
+  transition: background 0.3s, transform 0.2s;
 }
+
 .btn:hover,
 .button:hover {
-  background: #ff1493;
+  background: #ff69b4;
+  transform: translateY(-3px);
 }
+
 .btn:focus,
 .button:focus {
-  outline: 2px solid #ffd700;
-}
-.btn::before,
-.button::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.4) 0%,
-    transparent 80%
-  );
-  animation: glitter-move 3s infinite;
-  pointer-events: none;
-}
-@keyframes glitter-move {
-  0% {
-    transform: translate(0%, 0%) rotate(0deg);
-  }
-  100% {
-    transform: translate(100%, 100%) rotate(360deg);
-  }
+  outline: 2px solid #ffd95c;
+  outline-offset: 3px;
 }
 
 /* ===== Footer ===== */
 footer {
-  background: linear-gradient(145deg, #ffb6c1, #ff69b4);
+  background: #ff86c8;
   color: white;
   text-align: center;
-  padding: 1.5em;
-  border-top: 4px solid #ffd700;
-  box-shadow: 0 -3px 15px rgba(255, 105, 180, 0.3);
-  position: relative;
+  padding: 2em 1em;
+  border-top: 4px solid #ffd95c;
+  margin-top: 3em;
 }
 
 footer .socials {
-  margin-top: 0.5em;
+  margin-top: 0.8em;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap; /* Don't let them wrap to the next line */
-  gap: 10px; /* Even spacing between icons */
-}
-
-footer .socials a {
-  margin: 0 8px;
-  display: inline-block;
-  text-decoration: none;
+  gap: 12px;
 }
 
 footer .socials img {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
 }
 
 footer .socials img:hover {
-  transform: scale(1.2) rotate(5deg);
-  box-shadow: 0 0 15px #ffd700, 0 0 30px #ff69b4;
+  transform: scale(1.15);
 }
 
 footer p {
@@ -309,159 +225,48 @@ footer p {
   color: #fffaf0;
 }
 
-/* ===== Rainbow bar under h2 ===== */
-h2::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 80px;
-  height: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    90deg,
-    #ff69b4,
-    #ffd700,
-    #adff2f,
-    #00ffff,
-    #ff69b4
-  );
-  border-radius: 2px;
-  bottom: -10px;
-  animation: rainbow 4s linear infinite;
-}
-@keyframes rainbow {
-  0% {
-    background-position: 0%;
+/* ===== Animaties ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
-  100% {
-    background-position: 100%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ===== Gallery ===== */
-.gallery-section {
-  background: #fff0f5;
-  padding: 2em 1em;
-  text-align: center;
-  border-radius: 1.5em;
-  box-shadow: 0 0 18px rgba(255, 105, 180, 0.1);
-  margin: 2em auto;
-  max-width: 1200px;
-  animation: sectionFadeIn 1.2s ease forwards;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5em;
-  justify-items: center;
-}
-.gallery-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 1em;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background: #fff;
-}
-.gallery-grid img:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 0 20px #ffb6c1, 0 0 30px #ffd700;
-  outline: 2px solid #ffd700;
-}
-
-/* ===== Responsive losse foto's ===== */
-img:not(.logo):not(.gallery-grid img) {
-  max-width: 95%;
-  height: auto;
-  margin: 1em auto;
-  display: block;
-  border-radius: 1em;
-  object-fit: contain;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-img:not(.logo):not(.gallery-grid img):hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-img:not(.logo):not(.gallery-grid img):active {
-  transform: scale(0.98);
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.feest-img {
-  height: 50%;
-  width: 50%;
-  object-fit: cover;
-  border-radius: 1em;
-  margin-top: 1em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ===== Booking widget & Map ===== */
-.booking-widget-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.booking-widget-container > * {
-  flex: 0 0 auto;
-}
-
-.map-container {
-  max-width: 600px;
-  margin: 2rem auto 0;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-}
-.map-container iframe {
-  width: 100%;
-  height: 350px;
-  border: none;
-  display: block;
-}
-
-/* ===== Accessibility: Focus ===== */
-a:focus,
-button:focus,
-.btn:focus,
-.feature:focus-within {
-  outline: 2px solid #ffd700;
-  outline-offset: 2px;
-}
-
-/* ===== Media Queries ===== */
+/* ===== Responsiveness ===== */
 @media (max-width: 768px) {
   .feature-boxes {
     flex-direction: column;
     align-items: center;
-    gap: 1.5em;
   }
+
   .navbar nav a {
-    margin: 0 0.5em;
+    margin: 0 0.6em;
+    font-size: 0.95rem;
   }
-  .hero,
-  .features,
-  .feestjes,
-  .workshops,
-  .about,
-  .team,
-  .contact .reserveer {
-    padding: 1.5em 0.5em;
+
+  .hero {
+    padding: 3em 1em;
   }
+
+  .locatie2,
+  .feestjes {
+    padding: 2em 1em;
+  }
+
+  footer .socials img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ===== Accessibility ===== */
+a:focus,
+button:focus {
+  outline: 2px solid #ffd95c;
+  outline-offset: 3px;
 }
