@@ -167,6 +167,23 @@
             <span class="prijs">€7 / stuk</span>
           </li>
           <h2>💜✨ Prijzen voor Beauty Party: Kpop Demon Hunters! 🎤🔮</h2>
+          <li>
+            <span class="omschrijving">Tot en met 8 kinderen</span>
+            <span class="prijs">€325</span>
+          </li>
+          <li>
+            <span class="omschrijving">Per extra kind</span>
+            <span class="prijs">€25</span>
+          </li>
+                    <li class="optie-titel">Optioneel & mega tof:</li>
+          <li>
+            <span class="omschrijving">Cupcake-pakket</span>
+            <span class="prijs">€15</span>
+          </li>
+          <li>
+            <span class="omschrijving">Luxe goodie bag</span>
+            <span class="prijs">€7 / stuk</span>
+          </li>
           <li class="kpop-slider-li">
             <div
               class="kpop-slider"
@@ -238,45 +255,45 @@
       <p>© 2025 Wendy’s Kinderkapsalon | Ontwerp & hosting door Joris ✂️</p>
     </footer>
     <script>
-        const IMAGES = [
-          "images/kpop-haar.jpg",
-          "images/rumi-met-meisje.jpg",
-          "images/kpop-pompoen.jpg",
-        ];
+      const IMAGES = [
+        "images/kpop-haar.jpg",
+        "images/rumi-met-meisje.jpg",
+        "images/kpop-pompoen.jpg",
+      ];
 
-        // Preload
-        IMAGES.forEach((src) => {
-          const i = new Image();
-          i.src = src;
-        });
+      // Preload
+      IMAGES.forEach((src) => {
+        const i = new Image();
+        i.src = src;
+      });
 
-        const img = document.getElementById("kpop-view");
-        const prev = document.getElementById("kpop-prev");
-        const next = document.getElementById("kpop-next");
-        const dotsWrap = document.getElementById("kpop-dots");
+      const img = document.getElementById("kpop-view");
+      const prev = document.getElementById("kpop-prev");
+      const next = document.getElementById("kpop-next");
+      const dotsWrap = document.getElementById("kpop-dots");
 
-        let i = 0;
-        const dots = IMAGES.map((_, idx) => {
-          const d = document.createElement("span");
-          d.className = "kdot" + (idx === 0 ? " active" : "");
-          d.title = `Foto ${idx + 1}`;
-          d.addEventListener("click", () => go(idx));
-          dotsWrap.appendChild(d);
-          return d;
-        });
+      let i = 0;
+      const dots = IMAGES.map((_, idx) => {
+        const d = document.createElement("span");
+        d.className = "kdot" + (idx === 0 ? " active" : "");
+        d.title = `Foto ${idx + 1}`;
+        d.addEventListener("click", () => go(idx));
+        dotsWrap.appendChild(d);
+        return d;
+      });
 
-        function render() {
-          img.src = IMAGES[i];
-          dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
-        }
-        function go(n) {
-          i = (n + IMAGES.length) % IMAGES.length;
-          render();
-        }
-
-        prev.addEventListener("click", () => go(i - 1));
-        next.addEventListener("click", () => go(i + 1));
+      function render() {
+        img.src = IMAGES[i];
+        dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
+      }
+      function go(n) {
+        i = (n + IMAGES.length) % IMAGES.length;
         render();
+      }
+
+      prev.addEventListener("click", () => go(i - 1));
+      next.addEventListener("click", () => go(i + 1));
+      render();
     </script>
   </body>
 </html>
