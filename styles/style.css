@@ -465,3 +465,70 @@ button:focus,
     padding: 1.5em 0.5em;
   }
 }
+
+/* --- Kpop slider (scoped) --- */
+/* — Fix Kpop slider so the image shows fully, no cropping, no forced ratio — */
+.feest-box .kpop-slider-li {
+  display: block;        /* stop fighting the ul li flex layout */
+  padding: 0;
+  border-bottom: none;
+}
+
+.feest-box .kpop-slider {
+  width: 100%;
+  max-width: 900px;      /* optional cap; delete if you want full width */
+  margin: 12px auto 0;
+  display: grid;
+  gap: 10px;
+}
+
+.feest-box .kpop-frame {
+  /* no fixed aspect-ratio, no height: the image defines the height */
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.feest-box .kpop-frame img {
+  display: block;
+  width: 100%;           /* responsive */
+  height: auto;          /* keep natural aspect ratio */
+  object-fit: contain;   /* no cropping ever */
+  background: transparent;
+}
+
+.feest-box .kpop-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.feest-box .kpop-controls button {
+  background: #ff69b4;
+  color: #fff;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.feest-box .kpop-controls button:hover {
+  background: #ff1493;
+}
+.feest-box .kpop-controls button:focus {
+  outline: 2px solid #ffd700;
+}
+.feest-box .kpop-dots {
+  display: flex;
+  gap: 6px;
+}
+.feest-box .kdot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff69b44d;
+}
+.feest-box .kdot.active {
+  background: #ff69b4;
+}
