@@ -86,11 +86,33 @@
 
     <section class="reserveer">
       <h2>📍 Amsterdam</h2>
-      <p>
-        Knipbeurt? Bel of mail ons. Voor feestjes klik je gewoon op de knop
-        hieronder.
-      </p>
+      <p>Knipbeurt? App ons. Voor feestjes klik je op de knop hieronder.</p>
       <div class="booking-widget">
+        <button
+          type="button"
+          class="btn reserveer-trigger"
+          data-locatie="amsterdam"
+        >
+          🎉 Reserveer nu je feestje | Amsterdam
+        </button>
+      </div>
+
+      <h2>📍 Badhoevedorp</h2>
+      <p>Knipbeurt? App ons. Voor feestjes klik je op de knop hieronder.</p>
+      <div class="booking-widget">
+        <button
+          type="button"
+          class="btn reserveer-trigger"
+          data-locatie="badhoevedorp"
+        >
+          🎉 Reserveer nu je feestje | Badhoevedorp
+        </button>
+      </div>
+    </section>
+
+    <!-- Verborgen YouCanBookMe-widgets, worden via JS "aangeklikt" na akkoord -->
+    <div id="ycb-hidden" class="hidden">
+      <div data-ycb="amsterdam">
         <script
           src="https://embed.ycb.me"
           async
@@ -101,12 +123,7 @@
           data-displaymode="light"
         ></script>
       </div>
-
-      <h2>📍 Badhoevedorp</h2>
-      <p>
-        Knipbeurt? Alleen bellen of mailen. Feestjes? Klik op de knop hieronder.
-      </p>
-      <div class="booking-widget">
+      <div data-ycb="badhoevedorp">
         <script
           src="https://embed.ycb.me"
           async
@@ -117,7 +134,7 @@
           data-displaymode="light"
         ></script>
       </div>
-    </section>
+    </div>
 
     <section class="feestjes" id="prijzen">
       <div class="feest-box">
@@ -148,7 +165,15 @@
             >
             <span class="prijs">€30</span>
           </li>
-          <h2>💰 Prijzen voor feestjes!</h2>
+
+          <a
+            href="https://wa.me/0643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
+            class="btn"
+          >
+            📞 Bel of app nu om te reserveren voor een knipbeurt
+          </a>
+
+          <h2>💰 Prijzen voor Beautyparty, Spa-Party & Fotoshoot-Party!</h2>
           <li>
             <span class="omschrijving">Tot en met 8 kinderen</span>
             <span class="prijs">€275</span>
@@ -166,7 +191,7 @@
             <span class="omschrijving">Luxe goodie bag</span>
             <span class="prijs">€7 / stuk</span>
           </li>
-          <h2>💜✨ Prijzen voor Beauty Party: Kpop Demon Hunters! 🎤🔮</h2>
+          <h2>💜✨ Prijzen voor Kpop Demon Hunters Party! 🎤🔮</h2>
           <li>
             <span class="omschrijving">Tot en met 8 kinderen</span>
             <span class="prijs">€325</span>
@@ -175,7 +200,7 @@
             <span class="omschrijving">Per extra kind</span>
             <span class="prijs">€25</span>
           </li>
-                    <li class="optie-titel">Optioneel & mega tof:</li>
+          <li class="optie-titel">Optioneel & mega tof:</li>
           <li>
             <span class="omschrijving">Cupcake-pakket</span>
             <span class="prijs">€15</span>
@@ -215,12 +240,89 @@
         Feestje: gratis annuleren tot 2 weken van tevoren. Daarna volledige
         kosten.
       </p>
+      <p>
+        Annuleren of veranderen van een Feestje kan alleen door te bellen,
+        liever niet per e-mail.
+      </p>
     </section>
 
     <br />
-    <a href="contact.html" class="btn"
-      >📞 Bel of mail nu om te reserveren voor een knipbeurt</a
+    <a
+      href="https://wa.me/0643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
+      class="btn"
     >
+      📞 App nu om te reserveren voor een knipbeurt
+    </a>
+
+    <div id="voorwaarden-overlay" class="voorwaarden-overlay hidden">
+      <div class="voorwaarden-modal">
+        <h2>Voorwaarden reserveren</h2>
+        <div id="voorwaarden-content" class="voorwaarden-content">
+          <p><strong>Lees de voorwaarden voordat je reserveert.</strong></p>
+          <p>
+            Door een reservering te maken bij Wendy's Kinderkapsalon ga je
+            akkoord met de onderstaande voorwaarden:
+          </p>
+          <ul>
+            <li>
+              De feestjesruimtes zijn compleet en feestelijk ingericht. Eigen
+              versiering en consumpties zal niet nodig zijn.
+            </li>
+
+            <li>
+              Annuleren van een feestje kan tot twee weken van tevoren. Bij
+              no-show of te late annulering wordt het volledige bedrag in
+              rekening gebracht.
+            </li>
+
+            <li>
+              Bij feestjes met meer dan 8 kinderen horen we graag 24 uur van
+              tevoren als extra kinderen toch niet komen. Dit vanwege het tijdig
+              kunnen afmelden van een extra personeelslid.
+            </li>
+
+            <li>
+              Gezien de ruimte mogen er maximaal twee volwassenen aanwezig zijn.
+            </li>
+
+            <li>
+              Het eerste drankje voor de twee ouders is inbegrepen. Extra
+              drankjes kunnen altijd besteld worden.
+            </li>
+
+            <li>
+              Voor de kinderen wordt onbeperkt limonade en water geschonken.
+            </li>
+
+            <li>
+              Er wordt tijdens het feestje een gezellig moment ingepland voor
+              het uitpakken meegebrachte cadeautjes, indien nodig.
+            </li>
+
+            <li>
+              De jarige krijgt na afloop van het feestje een presentje van de
+              kapsalon.
+            </li>
+
+            <li>
+              Mocht een kind allergieën hebben, willen we dit graag weten.
+            </li>
+
+            <li>
+              Kortom, wij staan voor jullie klaar om er een compleet, onbezorgd
+              en fantastisch feestje van te maken! Als ouders hoeft u niets voor
+              te bereiden, kom genieten!
+            </li>
+          </ul>
+        </div>
+        <div class="voorwaarden-actions">
+          <button type="button" id="voorwaarden-annuleer">Annuleer</button>
+          <button type="button" id="voorwaarden-akkoord" disabled>
+            Ik ga akkoord en wil reserveren
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <div class="socials">
@@ -294,6 +396,99 @@
       prev.addEventListener("click", () => go(i - 1));
       next.addEventListener("click", () => go(i + 1));
       render();
+
+      // ==============================
+      // VOORWAARDEN + RESERVEREN LOGICA
+      // ==============================
+      const voorwaardenOverlay = document.getElementById("voorwaarden-overlay");
+      const voorwaardenContent = document.getElementById("voorwaarden-content");
+      const voorwaardenAnnuleer = document.getElementById(
+        "voorwaarden-annuleer"
+      );
+      const voorwaardenAkkoord = document.getElementById("voorwaarden-akkoord");
+      const reserveerTriggers = document.querySelectorAll(".reserveer-trigger");
+
+      let huidigeLocatie = null;
+
+      const ycbButtons = {
+        amsterdam: null,
+        badhoevedorp: null,
+      };
+
+      // Poll naar de verborgen YouCanBookMe-knoppen
+      const ycbInterval = setInterval(() => {
+        if (!ycbButtons.amsterdam) {
+          const btnAms = document.querySelector(
+            '#ycb-hidden [data-ycb="amsterdam"] a, #ycb-hidden [data-ycb="amsterdam"] button'
+          );
+          if (btnAms) {
+            ycbButtons.amsterdam = btnAms;
+          }
+        }
+        if (!ycbButtons.badhoevedorp) {
+          const btnBad = document.querySelector(
+            '#ycb-hidden [data-ycb="badhoevedorp"] a, #ycb-hidden [data-ycb="badhoevedorp"] button'
+          );
+          if (btnBad) {
+            ycbButtons.badhoevedorp = btnBad;
+          }
+        }
+
+        if (ycbButtons.amsterdam && ycbButtons.badhoevedorp) {
+          clearInterval(ycbInterval);
+        }
+      }, 400);
+
+      // Klik op zichtbare reserveringsknoppen → popup tonen
+      reserveerTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          const locatie = trigger.getAttribute("data-locatie");
+          if (!locatie) return;
+
+          huidigeLocatie = locatie;
+          voorwaardenOverlay.classList.remove("hidden");
+          voorwaardenContent.scrollTop = 0;
+          voorwaardenAkkoord.disabled = true;
+        });
+      });
+
+      // Scrollen: onderaan = akkoord-knop actief
+      voorwaardenContent.addEventListener("scroll", () => {
+        const bottom =
+          voorwaardenContent.scrollTop + voorwaardenContent.clientHeight >=
+          voorwaardenContent.scrollHeight - 5;
+        if (bottom) {
+          voorwaardenAkkoord.disabled = false;
+        }
+      });
+
+      // Annuleer → popup sluiten
+      voorwaardenAnnuleer.addEventListener("click", () => {
+        voorwaardenOverlay.classList.add("hidden");
+        huidigeLocatie = null;
+      });
+
+      // Akkoord → popup sluiten + echte YCB-knop activeren
+      voorwaardenAkkoord.addEventListener("click", () => {
+        voorwaardenOverlay.classList.add("hidden");
+        if (!huidigeLocatie) return;
+
+        const knop = ycbButtons[huidigeLocatie];
+
+        if (knop) {
+          knop.click();
+        } else {
+          // Fallback: directe link
+          if (huidigeLocatie === "amsterdam") {
+            window.open("https://wendyamsterdam.ycb.me", "_blank");
+          } else if (huidigeLocatie === "badhoevedorp") {
+            window.open("https://wendybadhoevedorp.ycb.me", "_blank");
+          }
+        }
+
+        huidigeLocatie = null;
+      });
     </script>
   </body>
 </html>

@@ -469,14 +469,14 @@ button:focus,
 /* --- Kpop slider (scoped) --- */
 /* — Fix Kpop slider so the image shows fully, no cropping, no forced ratio — */
 .feest-box .kpop-slider-li {
-  display: block;        /* stop fighting the ul li flex layout */
+  display: block; /* stop fighting the ul li flex layout */
   padding: 0;
   border-bottom: none;
 }
 
 .feest-box .kpop-slider {
   width: 100%;
-  max-width: 900px;      /* optional cap; delete if you want full width */
+  max-width: 900px; /* optional cap; delete if you want full width */
   margin: 12px auto 0;
   display: grid;
   gap: 10px;
@@ -492,9 +492,9 @@ button:focus,
 
 .feest-box .kpop-frame img {
   display: block;
-  width: 100%;           /* responsive */
-  height: auto;          /* keep natural aspect ratio */
-  object-fit: contain;   /* no cropping ever */
+  width: 100%; /* responsive */
+  height: auto; /* keep natural aspect ratio */
+  object-fit: contain; /* no cropping ever */
   background: transparent;
 }
 
@@ -531,4 +531,85 @@ button:focus,
 }
 .feest-box .kdot.active {
   background: #ff69b4;
+}
+
+/* --- Voorwaarden --- */
+/* Verborgen element-helper */
+.hidden {
+  display: none !important;
+}
+
+/* Overlay voor voorwaarden-popup */
+.voorwaarden-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* De modal zelf */
+.voorwaarden-modal {
+  background-color: #ffffff;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+.voorwaarden-modal h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* Scrollbare tekst */
+.voorwaarden-content {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  overflow-y: auto;
+  max-height: 50vh;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Knoppen onderin de modal */
+.voorwaarden-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.voorwaarden-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+#voorwaarden-annuleer {
+  background-color: #eeeeee;
+  color: #333333;
+}
+
+#voorwaarden-akkoord:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+#voorwaarden-akkoord:not(:disabled) {
+  background-color: #28a745;
+  color: #ffffff;
 }
