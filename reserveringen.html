@@ -415,6 +415,21 @@
         badhoevedorp: null,
       };
 
+      // CSS-based body scroll lock: preserve scroll position and lock background
+      let _lockedScrollY = 0;
+
+      function disableBodyScrollWithCss() {
+        _lockedScrollY = window.scrollY || window.pageYOffset || 0;
+        document.body.style.top = `-${_lockedScrollY}px`;
+        document.body.classList.add("no-scroll");
+      }
+
+      function enableBodyScrollWithCss() {
+        document.body.classList.remove("no-scroll");
+        document.body.style.top = "";
+        window.scrollTo(0, _lockedScrollY);
+      }
+
       // Poll naar de verborgen YouCanBookMe-knoppen
       const ycbInterval = setInterval(() => {
         if (!ycbButtons.amsterdam) {
@@ -450,6 +465,7 @@
           voorwaardenOverlay.classList.remove("hidden");
           voorwaardenContent.scrollTop = 0;
           voorwaardenAkkoord.disabled = true;
+          disableBodyScrollWithCss();
         });
       });
 
@@ -467,13 +483,14 @@
       voorwaardenAnnuleer.addEventListener("click", () => {
         voorwaardenOverlay.classList.add("hidden");
         huidigeLocatie = null;
+        enableBodyScrollWithCss();
       });
 
       // Akkoord → popup sluiten + echte YCB-knop activeren
       voorwaardenAkkoord.addEventListener("click", () => {
         voorwaardenOverlay.classList.add("hidden");
         if (!huidigeLocatie) return;
-
+        enableBodyScrollWithCss();
         const knop = ycbButtons[huidigeLocatie];
 
         if (knop) {
