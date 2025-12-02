@@ -174,13 +174,13 @@
           <ul class="prijs-lijst">
             <li>
               <span class="omschrijving">Knippen kinderen</span>
-              <span class="prijs">€30</span>
+              <span class="prijs">€32,50</span>
             </li>
             <li>
               <span class="omschrijving"
                 >Knippen kinderen zaterdag & zondag</span
               >
-              <span class="prijs">€32,50</span>
+              <span class="prijs">€35</span>
             </li>
             <li>
               <span class="omschrijving">Knippen vanaf 13 jaar</span>
@@ -191,7 +191,7 @@
               <span class="omschrijving"
                 >Knippen en vlechten (inclusief nephaar + glitters)</span
               >
-              <span class="prijs">€40</span>
+              <span class="prijs">€45</span>
             </li>
             <li>
               <span class="omschrijving"
@@ -201,16 +201,57 @@
             </li>
 
             <a
-              href="https://wa.me/0643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
+              href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
               class="btn"
+              id="reserve-whatsapp"
             >
               📞 Bel of app nu om te reserveren voor een knipbeurt
             </a>
+            <script>
+              (function () {
+                const el = document.getElementById("reserve-whatsapp");
+                if (!el) return;
+                el.addEventListener("click", function (e) {
+                  // use international format (NL: 31) — required for reliable behavior on iPhone/WhatsApp
+                  const phone = "31643203655";
+                  const text = encodeURIComponent(
+                    "Ik wil graag een afspraak maken"
+                  );
+                  const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
+                  const webUrl = `https://wa.me/${phone}?text=${text}`;
+
+                  // Try opening the native WhatsApp app first. If it doesn't open, fall back to web wa.me.
+                  // Use visibilitychange + timeout to detect if the app took focus (common pattern on iOS).
+                  e.preventDefault();
+
+                  let fallback = setTimeout(() => {
+                    window.open(webUrl, "_blank");
+                  }, 700);
+
+                  const onVisChange = () => {
+                    // app opened -> cancel fallback
+                    clearTimeout(fallback);
+                    document.removeEventListener(
+                      "visibilitychange",
+                      onVisChange
+                    );
+                  };
+                  document.addEventListener("visibilitychange", onVisChange);
+
+                  // Attempt to open native app
+                  window.location.href = appUrl;
+                });
+              })();
+            </script>
 
             <h2>💰 Prijzen voor Beautyparty, Spa-Party & Fotoshoot-Party!</h2>
+            <p>
+              Voor boekingen die al voor 3 december zijn gemaakt zullen de oude
+              prijzen van toepassing zijn.
+            </p>
             <li>
               <span class="omschrijving">Tot en met 8 kinderen</span>
-              <span class="prijs">€275</span>
+              <span class="prijs">€300</span>
             </li>
             <li>
               <span class="omschrijving">Per extra kind</span>

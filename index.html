@@ -87,6 +87,46 @@
           loading="lazy"
           class="effect"
         />
+        <a
+          href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
+          class="btn"
+          id="reserve-whatsapp"
+        >
+          📞 Bel of app nu om te reserveren voor een knipbeurt
+        </a>
+        <script>
+          (function () {
+            const el = document.getElementById("reserve-whatsapp");
+            if (!el) return;
+            el.addEventListener("click", function (e) {
+              // use international format (NL: 31) — required for reliable behavior on iPhone/WhatsApp
+              const phone = "31643203655";
+              const text = encodeURIComponent(
+                "Ik wil graag een afspraak maken"
+              );
+              const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
+              const webUrl = `https://wa.me/${phone}?text=${text}`;
+
+              // Try opening the native WhatsApp app first. If it doesn't open, fall back to web wa.me.
+              // Use visibilitychange + timeout to detect if the app took focus (common pattern on iOS).
+              e.preventDefault();
+
+              let fallback = setTimeout(() => {
+                window.open(webUrl, "_blank");
+              }, 700);
+
+              const onVisChange = () => {
+                // app opened -> cancel fallback
+                clearTimeout(fallback);
+                document.removeEventListener("visibilitychange", onVisChange);
+              };
+              document.addEventListener("visibilitychange", onVisChange);
+
+              // Attempt to open native app
+              window.location.href = appUrl;
+            });
+          })();
+        </script>
       </section>
 
       <section class="features">
@@ -142,14 +182,20 @@
             width="30"
           />
         </a>
-        <a href="https://www.instagram.com/wendyskinderkapsalon?igsh=ajdvYXBmNHpiMnRi" target="_blank">
+        <a
+          href="https://www.instagram.com/wendyskinderkapsalon?igsh=ajdvYXBmNHpiMnRi"
+          target="_blank"
+        >
           <img
             src="images/social media logo's/instagram.png"
             alt="Instagram"
             width="30"
           />
         </a>
-        <a href="https://www.tiktok.com/@_wendyskinderkapsalon?_t=ZG-8y1fVGN9Ctt&_r=1" target="_blank">
+        <a
+          href="https://www.tiktok.com/@_wendyskinderkapsalon?_t=ZG-8y1fVGN9Ctt&_r=1"
+          target="_blank"
+        >
           <img
             src="images/social media logo's/tiktok.png"
             alt="TikTok"
