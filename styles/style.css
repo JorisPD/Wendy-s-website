@@ -581,6 +581,12 @@ button:focus,
   line-height: 1.4;
 }
 
+/* Improve touch scrolling on iOS Safari */
+.voorwaarden-content {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
 /* Knoppen onderin de modal */
 .voorwaarden-actions {
   display: flex;

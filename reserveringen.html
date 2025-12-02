@@ -246,6 +246,61 @@
       </p>
     </section>
 
+    <section class="feestjes">
+      <h2>Voorwaarden reservering van feestjes</h2>
+      <p><strong>Lees de voorwaarden voordat je reserveert.</strong></p>
+      <p>
+        Door een reservering te maken bij Wendy's Kinderkapsalon ga je akkoord
+        met de onderstaande voorwaarden:
+      </p>
+      <ul>
+        <li>
+          De feestjesruimtes zijn compleet en feestelijk ingericht. Eigen
+          versiering en consumpties zal niet nodig zijn.
+        </li>
+        <br />
+        <li>
+          Annuleren van een feestje kan tot twee weken van tevoren. Bij no-show
+          of te late annulering wordt het volledige bedrag in rekening gebracht.
+        </li>
+        <br />
+        <li>
+          Bij feestjes met meer dan 8 kinderen horen we graag 24 uur van tevoren
+          als extra kinderen toch niet komen. Dit vanwege het tijdig kunnen
+          afmelden van een extra personeelslid.
+        </li>
+        <br />
+        <li>
+          Gezien de ruimte mogen er maximaal twee volwassenen aanwezig zijn.
+        </li>
+        <br />
+        <li>
+          Het eerste drankje voor de twee ouders is inbegrepen. Extra drankjes
+          kunnen altijd besteld worden.
+        </li>
+        <br />
+        <li>Voor de kinderen wordt onbeperkt limonade en water geschonken.</li>
+        <br />
+        <li>
+          Er wordt tijdens het feestje een gezellig moment ingepland voor het
+          uitpakken meegebrachte cadeautjes, indien nodig.
+        </li>
+        <br />
+        <li>
+          De jarige krijgt na afloop van het feestje een presentje van de
+          kapsalon.
+        </li>
+        <br />
+        <li>Mocht een kind allergieën hebben, willen we dit graag weten.</li>
+        <br />
+        <li>
+          Kortom, wij staan voor jullie klaar om er een compleet, onbezorgd en
+          fantastisch feestje van te maken! Als ouders hoeft u niets voor te
+          bereiden, kom genieten!
+        </li>
+      </ul>
+    </section>
+
     <br />
     <a
       href="https://wa.me/0643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
@@ -316,10 +371,19 @@
           </ul>
         </div>
         <div class="voorwaarden-actions">
-          <button type="button" id="voorwaarden-annuleer">Annuleer</button>
-          <button type="button" id="voorwaarden-akkoord" disabled>
-            Ik ga akkoord en wil reserveren
-          </button>
+          <label
+            for="voorwaarden-checkbox"
+            style="display: flex; align-items: center; gap: 8px"
+          >
+            <input type="checkbox" id="voorwaarden-checkbox" />
+            <span>Ik heb de voorwaarden gelezen</span>
+          </label>
+          <div style="margin-left: auto; display: flex; gap: 10px">
+            <button type="button" id="voorwaarden-annuleer">Annuleer</button>
+            <button type="button" id="voorwaarden-akkoord" disabled>
+              Ik ga akkoord en wil reserveren
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -406,6 +470,9 @@
         "voorwaarden-annuleer"
       );
       const voorwaardenAkkoord = document.getElementById("voorwaarden-akkoord");
+      const voorwaardenCheckbox = document.getElementById(
+        "voorwaarden-checkbox"
+      );
       const reserveerTriggers = document.querySelectorAll(".reserveer-trigger");
 
       let huidigeLocatie = null;
@@ -417,17 +484,32 @@
 
       // CSS-based body scroll lock: preserve scroll position and lock background
       let _lockedScrollY = 0;
+      const _isIOS =
+        /iP(hone|od|ad)/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
       function disableBodyScrollWithCss() {
         _lockedScrollY = window.scrollY || window.pageYOffset || 0;
-        document.body.style.top = `-${_lockedScrollY}px`;
-        document.body.classList.add("no-scroll");
+        // iOS has quirks with position:fixed + inner scrollable elements.
+        // Use overflow:hidden on root for iOS and the position:fixed approach for others.
+        if (_isIOS) {
+          document.documentElement.style.overflow = "hidden";
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.top = `-${_lockedScrollY}px`;
+          document.body.classList.add("no-scroll");
+        }
       }
 
       function enableBodyScrollWithCss() {
-        document.body.classList.remove("no-scroll");
-        document.body.style.top = "";
-        window.scrollTo(0, _lockedScrollY);
+        if (_isIOS) {
+          document.documentElement.style.overflow = "";
+          document.body.style.overflow = "";
+        } else {
+          document.body.classList.remove("no-scroll");
+          document.body.style.top = "";
+          window.scrollTo(0, _lockedScrollY);
+        }
       }
 
       // Poll naar de verborgen YouCanBookMe-knoppen
@@ -464,20 +546,21 @@
           huidigeLocatie = locatie;
           voorwaardenOverlay.classList.remove("hidden");
           voorwaardenContent.scrollTop = 0;
-          voorwaardenAkkoord.disabled = true;
+          // reset checkbox + button state
+          if (voorwaardenCheckbox) voorwaardenCheckbox.checked = false;
+          if (voorwaardenAkkoord) voorwaardenAkkoord.disabled = true;
           disableBodyScrollWithCss();
         });
       });
 
-      // Scrollen: onderaan = akkoord-knop actief
-      voorwaardenContent.addEventListener("scroll", () => {
-        const bottom =
-          voorwaardenContent.scrollTop + voorwaardenContent.clientHeight >=
-          voorwaardenContent.scrollHeight - 5;
-        if (bottom) {
-          voorwaardenAkkoord.disabled = false;
-        }
-      });
+      // Wire checkbox to enable/disable the akkoord button
+      if (voorwaardenCheckbox && voorwaardenAkkoord) {
+        // initialize state in case modal is already present
+        voorwaardenAkkoord.disabled = !voorwaardenCheckbox.checked;
+        voorwaardenCheckbox.addEventListener("change", (e) => {
+          voorwaardenAkkoord.disabled = !e.target.checked;
+        });
+      }
 
       // Annuleer → popup sluiten
       voorwaardenAnnuleer.addEventListener("click", () => {
