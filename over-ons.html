@@ -61,13 +61,10 @@
     <header>
       <div class="topbar">
         <span>📞 06 43 20 36 55</span>
-        <span>📧 wendyskinderkapsalon@ziggo.nl</span>
+        <span>📧 kinderkapsalonwendys@gmail.com</span>
       </div>
       <div class="navbar">
-        <a href="index.html">
-          <img src="images/logo.png" alt="Wendy's logo" class="logo" />
-        </a>
-
+        <img src="images/logo.png" alt="Wendy's logo" class="logo" />
         <nav>
           <a href="index.html">Home</a>
           <a href="over-ons.html">Over ons</a>
@@ -207,48 +204,8 @@
             >
               📞 Bel of app nu om te reserveren voor een knipbeurt
             </a>
-            <script>
-              (function () {
-                const el = document.getElementById("reserve-whatsapp");
-                if (!el) return;
-                el.addEventListener("click", function (e) {
-                  // use international format (NL: 31) — required for reliable behavior on iPhone/WhatsApp
-                  const phone = "31643203655";
-                  const text = encodeURIComponent(
-                    "Ik wil graag een afspraak maken"
-                  );
-                  const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
-                  const webUrl = `https://wa.me/${phone}?text=${text}`;
 
-                  // Try opening the native WhatsApp app first. If it doesn't open, fall back to web wa.me.
-                  // Use visibilitychange + timeout to detect if the app took focus (common pattern on iOS).
-                  e.preventDefault();
-
-                  let fallback = setTimeout(() => {
-                    window.open(webUrl, "_blank");
-                  }, 700);
-
-                  const onVisChange = () => {
-                    // app opened -> cancel fallback
-                    clearTimeout(fallback);
-                    document.removeEventListener(
-                      "visibilitychange",
-                      onVisChange
-                    );
-                  };
-                  document.addEventListener("visibilitychange", onVisChange);
-
-                  // Attempt to open native app
-                  window.location.href = appUrl;
-                });
-              })();
-            </script>
-
-            <h2>💰 Prijzen voor Beautyparty, Spa-Party & Fotoshoot-Party!</h2>
-            <p>
-              Voor boekingen die al voor 3 december zijn gemaakt zullen de oude
-              prijzen van toepassing zijn.
-            </p>
+            <h2>💰 Prijzen voor Beautyparty & Fotoshoot-Party!</h2>
             <li>
               <span class="omschrijving">Tot en met 8 kinderen</span>
               <span class="prijs">€300</span>
@@ -266,7 +223,9 @@
               <span class="omschrijving">Luxe goodie bag</span>
               <span class="prijs">€7 / stuk</span>
             </li>
-            <h2>💜✨ Prijzen voor Kpop Demon Hunters Party! 🎤🔮</h2>
+            <h2>
+              💜✨ Prijzen voor Kpop Demon Hunters Party & Spa-Party! 🎤🔮
+            </h2>
             <li>
               <span class="omschrijving">Tot en met 8 kinderen</span>
               <span class="prijs">€325</span>
@@ -339,5 +298,30 @@
         <a href="https://studiodeerenberg.nl">Studio Deerenberg</a>
       </p>
     </footer>
+    <script>
+      (function () {
+        const el = document.getElementById("reserve-whatsapp");
+        if (!el) return;
+        el.addEventListener("click", function (e) {
+          const phone = "31643203655";
+          const text = encodeURIComponent("✂️ Ik wil graag een afspraak maken");
+          const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
+          const webUrl = `https://wa.me/${phone}?text=${text}`;
+          e.preventDefault();
+
+          let fallback = setTimeout(() => {
+            window.open(webUrl, "_blank");
+          }, 700);
+
+          const onVisChange = () => {
+            clearTimeout(fallback);
+            document.removeEventListener("visibilitychange", onVisChange);
+          };
+          document.addEventListener("visibilitychange", onVisChange);
+
+          window.location.href = appUrl;
+        });
+      })();
+    </script>
   </body>
 </html>

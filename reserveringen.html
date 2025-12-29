@@ -61,13 +61,10 @@
     <header>
       <div class="topbar">
         <span>📞 06 43 20 36 55</span>
-        <span>📧 wendyskinderkapsalon@ziggo.nl</span>
+        <span>📧 kinderkapsalonwendys@gmail.com</span>
       </div>
       <div class="navbar">
-        <a href="index.html">
-          <img src="images/logo.png" alt="Wendy's logo" class="logo" />
-        </a>
-
+        <img src="images/logo.png" alt="Wendy's logo" class="logo" />
         <nav>
           <a href="index.html">Home</a>
           <a href="over-ons.html">Over ons</a>
@@ -110,7 +107,6 @@
       </div>
     </section>
 
-    <!-- Verborgen YouCanBookMe-widgets, worden via JS "aangeklikt" na akkoord -->
     <div id="ycb-hidden" class="hidden">
       <div data-ycb="amsterdam">
         <script
@@ -173,45 +169,8 @@
           >
             📞 Bel of app nu om te reserveren voor een knipbeurt
           </a>
-          <script>
-            (function () {
-              const el = document.getElementById("reserve-whatsapp");
-              if (!el) return;
-              el.addEventListener("click", function (e) {
-                // use international format (NL: 31) — required for reliable behavior on iPhone/WhatsApp
-                const phone = "31643203655";
-                const text = encodeURIComponent(
-                  "Ik wil graag een afspraak maken"
-                );
-                const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
-                const webUrl = `https://wa.me/${phone}?text=${text}`;
 
-                // Try opening the native WhatsApp app first. If it doesn't open, fall back to web wa.me.
-                // Use visibilitychange + timeout to detect if the app took focus (common pattern on iOS).
-                e.preventDefault();
-
-                let fallback = setTimeout(() => {
-                  window.open(webUrl, "_blank");
-                }, 700);
-
-                const onVisChange = () => {
-                  // app opened -> cancel fallback
-                  clearTimeout(fallback);
-                  document.removeEventListener("visibilitychange", onVisChange);
-                };
-                document.addEventListener("visibilitychange", onVisChange);
-
-                // Attempt to open native app
-                window.location.href = appUrl;
-              });
-            })();
-          </script>
-
-          <h2>💰 Prijzen voor Beautyparty, Spa-Party & Fotoshoot-Party!</h2>
-          <p>
-            Voor boekingen die al voor 3 december zijn gemaakt zullen de oude
-            prijzen van toepassing zijn.
-          </p>
+          <h2>💰 Prijzen voor Beautyparty & Fotoshoot-Party!</h2>
           <li>
             <span class="omschrijving">Tot en met 8 kinderen</span>
             <span class="prijs">€300</span>
@@ -229,7 +188,7 @@
             <span class="omschrijving">Luxe goodie bag</span>
             <span class="prijs">€7 / stuk</span>
           </li>
-          <h2>💜✨ Prijzen voor Kpop Demon Hunters Party! 🎤🔮</h2>
+          <h2>💜✨ Prijzen voor Kpop Demon Hunters Party & Spa-Party! 🎤🔮</h2>
           <li>
             <span class="omschrijving">Tot en met 8 kinderen</span>
             <span class="prijs">€325</span>
@@ -341,7 +300,7 @@
 
     <br />
     <a
-      href="https://wa.me/0643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
+      href="https://wa.me/0643203655?text=✂️%20Ik%20wil%20graag%20een%20afspraak%20maken"
       class="btn"
     >
       📞 App nu om te reserveren voor een knipbeurt
@@ -468,7 +427,6 @@
         "images/kpop-pompoen.jpg",
       ];
 
-      // Preload
       IMAGES.forEach((src) => {
         const i = new Image();
         i.src = src;
@@ -502,9 +460,6 @@
       next.addEventListener("click", () => go(i + 1));
       render();
 
-      // ==============================
-      // VOORWAARDEN + RESERVEREN LOGICA
-      // ==============================
       const voorwaardenOverlay = document.getElementById("voorwaarden-overlay");
       const voorwaardenContent = document.getElementById("voorwaarden-content");
       const voorwaardenAnnuleer = document.getElementById(
@@ -523,7 +478,6 @@
         badhoevedorp: null,
       };
 
-      // CSS-based body scroll lock: preserve scroll position and lock background
       let _lockedScrollY = 0;
       const _isIOS =
         /iP(hone|od|ad)/.test(navigator.userAgent) ||
@@ -531,8 +485,6 @@
 
       function disableBodyScrollWithCss() {
         _lockedScrollY = window.scrollY || window.pageYOffset || 0;
-        // iOS has quirks with position:fixed + inner scrollable elements.
-        // Use overflow:hidden on root for iOS and the position:fixed approach for others.
         if (_isIOS) {
           document.documentElement.style.overflow = "hidden";
           document.body.style.overflow = "hidden";
@@ -553,7 +505,6 @@
         }
       }
 
-      // Poll naar de verborgen YouCanBookMe-knoppen
       const ycbInterval = setInterval(() => {
         if (!ycbButtons.amsterdam) {
           const btnAms = document.querySelector(
@@ -577,7 +528,6 @@
         }
       }, 400);
 
-      // Klik op zichtbare reserveringsknoppen → popup tonen
       reserveerTriggers.forEach((trigger) => {
         trigger.addEventListener("click", (e) => {
           e.preventDefault();
@@ -587,30 +537,25 @@
           huidigeLocatie = locatie;
           voorwaardenOverlay.classList.remove("hidden");
           voorwaardenContent.scrollTop = 0;
-          // reset checkbox + button state
           if (voorwaardenCheckbox) voorwaardenCheckbox.checked = false;
           if (voorwaardenAkkoord) voorwaardenAkkoord.disabled = true;
           disableBodyScrollWithCss();
         });
       });
 
-      // Wire checkbox to enable/disable the akkoord button
       if (voorwaardenCheckbox && voorwaardenAkkoord) {
-        // initialize state in case modal is already present
         voorwaardenAkkoord.disabled = !voorwaardenCheckbox.checked;
         voorwaardenCheckbox.addEventListener("change", (e) => {
           voorwaardenAkkoord.disabled = !e.target.checked;
         });
       }
 
-      // Annuleer → popup sluiten
       voorwaardenAnnuleer.addEventListener("click", () => {
         voorwaardenOverlay.classList.add("hidden");
         huidigeLocatie = null;
         enableBodyScrollWithCss();
       });
 
-      // Akkoord → popup sluiten + echte YCB-knop activeren
       voorwaardenAkkoord.addEventListener("click", () => {
         voorwaardenOverlay.classList.add("hidden");
         if (!huidigeLocatie) return;
@@ -620,7 +565,6 @@
         if (knop) {
           knop.click();
         } else {
-          // Fallback: directe link
           if (huidigeLocatie === "amsterdam") {
             window.open("https://wendyamsterdam.ycb.me", "_blank");
           } else if (huidigeLocatie === "badhoevedorp") {
@@ -630,6 +574,28 @@
 
         huidigeLocatie = null;
       });
+    </script>
+    <script>
+      (function () {
+        const el = document.getElementById("reserve-whatsapp");
+        if (!el) return;
+        el.addEventListener("click", function (e) {
+          const phone = "31643203655";
+          const text = encodeURIComponent("✂️ Ik wil graag een afspraak maken");
+          const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
+          const webUrl = `https://wa.me/${phone}?text=${text}`;
+          e.preventDefault();
+          let fallback = setTimeout(() => {
+            window.open(webUrl, "_blank");
+          }, 700);
+          const onVisChange = () => {
+            clearTimeout(fallback);
+            document.removeEventListener("visibilitychange", onVisChange);
+          };
+          document.addEventListener("visibilitychange", onVisChange);
+          window.location.href = appUrl;
+        });
+      })();
     </script>
   </body>
 </html>
