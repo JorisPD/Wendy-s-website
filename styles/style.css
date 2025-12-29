@@ -309,6 +309,29 @@ footer p {
   color: #fffaf0;
 }
 
+/* ===== Footer Credits / Studio Deerenberg Link ===== */
+.footerlink {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7); /* Niet te fel, anders leidt het af */
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtiel lijntje erboven */
+}
+
+.footerlink a {
+  color: #ffd700; /* Goud, want we houden van bling */
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footerlink a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff69b4; /* BOEM, glow effect */
+  text-decoration: underline;
+}
+
 /* ===== Rainbow bar under h2 ===== */
 h2::before {
   content: "";
