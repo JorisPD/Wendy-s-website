@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-L1Z2ELV5GF"
@@ -19,15 +18,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
+      content="Contactgegevens en locaties van Wendy's Kinderkapsalon in Amsterdam en Badhoevedorp."
     />
-    <meta
-      name="keywords"
-      content="Kinderkapsalon, Knippen, Feestjes, Wendy, Kinderen, Haar, Kapsel"
-    />
-    <meta name="author" content="Wendy's Kinderkapsalon" />
-
-    <title>Wendy's Kinderkapsalon - Home</title>
+    <title>Wendy's Kinderkapsalon - Contact</title>
     <link
       rel="canonical"
       href="https://wendyskinderkapsalon.hair/contact.html"
@@ -35,20 +28,16 @@
 
     <link rel="icon" href="images/Favicon.png" type="image/x-icon" />
 
-    <meta
-      property="og:title"
-      content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
-    />
+    <meta property="og:title" content="Wendy's Kinderkapsalon - Contact" />
     <meta
       property="og:description"
-      content="Knippen en feestjes voor kinderen in een vrolijke sfeer."
+      content="Kom langs in Amsterdam of Badhoevedorp!"
     />
     <meta
       property="og:image"
       content="https://wendyskinderkapsalon.hair/images/logo.png"
     />
     <meta property="og:url" content="https://wendyskinderkapsalon.hair/" />
-    <meta name="twitter:card" content="summary_large_image" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"
@@ -60,17 +49,29 @@
   <body>
     <header>
       <div class="topbar">
-        <span>📞 06 43 20 36 55</span>
-        <span>📧 kinderkapsalonwendys@gmail.com</span>
+        <a href="tel:0643203655">📞 06 43 20 36 55</a>
+        <a href="mailto:kinderkapsalonwendys@gmail.com"
+          >📧 kinderkapsalonwendys@gmail.com</a
+        >
       </div>
+
       <div class="navbar">
-        <img src="images/logo.png" alt="Wendy's logo" class="logo" />
-        <nav>
-          <a href="index.html">Home</a>
+        <a href="index.html"
+          ><img src="images/logo.png" alt="Wendy's logo" class="logo"
+        /></a>
+
+        <button class="hamburger" aria-label="Open menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="nav-menu">
+          <a href="index.html" class="active">Home</a>
           <a href="over-ons.html">Over ons</a>
           <a href="contact.html">Contact</a>
           <a href="reserveringen.html">Reserveer</a>
-          <a href="galerij.html">galerij</a>
+          <a href="galerij.html">Galerij</a>
         </nav>
       </div>
     </header>
@@ -78,88 +79,86 @@
     <main>
       <section class="contact">
         <h2>Contact & Reserveren</h2>
-        <p>Amsterdam: 📍 Stadionweg 259, 1076 NZ</p>
-        <p>Badhoevedorp: 📍 Badhoevelaan 13, 1171 DA</p>
-        <p>📞 06 43 20 36 55</p>
-        <p>📧 wendyskinderkapsalon@ziggo.nl</p>
-        <p>
-          📅 Openingstijden:<br />
-          Di: 13:30-17:30, Wo/Vr: 9:30-17:30,<br />
-          Za: 9:00-17:00, Zo: op afspraak
-        </p>
+
+        <div style="margin-bottom: 2em">
+          <p><strong>📍 Amsterdam:</strong> Stadionweg 259, 1076 NZ</p>
+          <p><strong>📍 Badhoevedorp:</strong> Badhoevelaan 13, 1171 DA</p>
+          <p>
+            📞
+            <a
+              href="tel:0643203655"
+              style="color: inherit; text-decoration: none"
+              >06 43 20 36 55</a
+            >
+          </p>
+          <p>
+            📧
+            <a
+              href="mailto:wendyskinderkapsalon@ziggo.nl"
+              style="color: inherit; text-decoration: none"
+              >wendyskinderkapsalon@ziggo.nl</a
+            >
+          </p>
+          <p style="margin-top: 1em">
+            <strong>📅 Openingstijden:</strong><br />
+            Di: 13:30 - 17:30<br />
+            Wo/Vr: 9:30 - 17:30<br />
+            Za: 9:00 - 17:00<br />
+            Zo: Op afspraak
+          </p>
+        </div>
+
         <a
           href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
           class="btn"
-          id="reserve-whatsapp"
+          target="_blank"
+          rel="noopener"
         >
-          📞 Bel of app nu om te reserveren voor een knipbeurt
+          📞 Bel of app nu om te reserveren
         </a>
-        <script>
-          (function () {
-            const el = document.getElementById("reserve-whatsapp");
-            if (!el) return;
-            el.addEventListener("click", function (e) {
-              // use international format (NL: 31) — required for reliable behavior on iPhone/WhatsApp
-              const phone = "31643203655";
-              const text = encodeURIComponent(
-                "Ik wil graag een afspraak maken"
-              );
-              const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
-              const webUrl = `https://wa.me/${phone}?text=${text}`;
 
-              // Try opening the native WhatsApp app first. If it doesn't open, fall back to web wa.me.
-              // Use visibilitychange + timeout to detect if the app took focus (common pattern on iOS).
-              e.preventDefault();
+        <hr class="divider" />
 
-              let fallback = setTimeout(() => {
-                window.open(webUrl, "_blank");
-              }, 700);
+        <h2>Onze Locaties</h2>
+        <p>Kom gezellig langs in Amsterdam of Badhoevedorp!</p>
 
-              const onVisChange = () => {
-                // app opened -> cancel fallback
-                clearTimeout(fallback);
-                document.removeEventListener("visibilitychange", onVisChange);
-              };
-              document.addEventListener("visibilitychange", onVisChange);
-
-              // Attempt to open native app
-              window.location.href = appUrl;
-            });
-          })();
-        </script>
-        <br />
-
-        <h2>Locaties</h2>
-        <p>We hebben twee locaties: één in Amsterdam en één in Badhoevedorp.</p>
+        <h3>Amsterdam (Zuid)</h3>
         <div class="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.4003450897503!2d4.856452476706784!3d52.34502387201585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e1ff3dc5ae05%3A0x7f79af0fb04adf4d!2sStadionweg%20259%2C%201076%20NZ%20Amsterdam!5e0!3m2!1snl!2snl!4v1752003527607!5m2!1snl!2snl"
             width="100%"
             height="350"
             style="border: 0"
-            allowfullscreen=""
             loading="lazy"
+            allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            src="https://maps.google.com/maps?q=Stadionweg+259,+1076+NZ+Amsterdam&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          >
+          </iframe>
         </div>
 
+        <h3>Badhoevedorp</h3>
         <div class="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.6062293533723!2d4.7899557!3d52.3412893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e1667b7c1e2d%3A0x4df75fecb5543c2f!2sBadhoevelaan%2013%2C%201171%20DA%20Badhoevedorp!5e0!3m2!1snl!2snl!4v1752004968815!5m2!1snl!2snl"
-            width="600"
-            height="450"
+            width="100%"
+            height="350"
             style="border: 0"
-            allowfullscreen=""
             loading="lazy"
+            allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            src="https://maps.google.com/maps?q=Badhoevelaan+13,+1171+DA+Badhoevedorp&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          >
+          </iframe>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="socials">
-        <a href="https://www.facebook.com/share/1CmGEg3pK6/" target="_blank">
+        <a
+          href="https://www.facebook.com/share/1CmGEg3pK6/"
+          target="_blank"
+          rel="noopener"
+        >
           <img
             src="images/social media logo's/facebook.png"
             alt="Facebook"
@@ -169,6 +168,7 @@
         <a
           href="https://www.instagram.com/wendyskinderkapsalon?igsh=ajdvYXBmNHpiMnRi"
           target="_blank"
+          rel="noopener"
         >
           <img
             src="images/social media logo's/instagram.png"
@@ -179,6 +179,7 @@
         <a
           href="https://www.tiktok.com/@_wendyskinderkapsalon?_t=ZG-8y1fVGN9Ctt&_r=1"
           target="_blank"
+          rel="noopener"
         >
           <img
             src="images/social media logo's/tiktok.png"
@@ -189,8 +190,29 @@
       </div>
       <p class="footerlink">
         © 2025 Wendy’s Kinderkapsalon | Ontwerp & hosting door
-        <a href="https://studiodeerenberg.nl">Studio Deerenberg</a>
+        <a href="https://studiodeerenberg.nl" target="_blank" rel="noopener"
+          >Studio Deerenberg</a
+        >
       </p>
     </footer>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-menu a").forEach((n) =>
+          n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          })
+        );
+      }
+    </script>
   </body>
 </html>

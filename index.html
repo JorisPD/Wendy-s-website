@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-L1Z2ELV5GF"
@@ -21,31 +20,16 @@
       name="description"
       content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
     />
-    <meta
-      name="keywords"
-      content="Kinderkapsalon, Knippen, Feestjes, Wendy, Kinderen, Haar, Kapsel"
-    />
-    <meta name="author" content="Wendy's Kinderkapsalon" />
-
     <title>Wendy's Kinderkapsalon - Home</title>
     <link rel="canonical" href="https://wendyskinderkapsalon.hair/" />
-
     <link rel="icon" href="images/Favicon.png" type="image/x-icon" />
 
-    <meta
-      property="og:title"
-      content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
-    />
-    <meta
-      property="og:description"
-      content="Knippen en feestjes voor kinderen in een vrolijke sfeer."
-    />
+    <meta property="og:title" content="Wendy's Kinderkapsalon" />
     <meta
       property="og:image"
       content="https://wendyskinderkapsalon.hair/images/logo.png"
     />
     <meta property="og:url" content="https://wendyskinderkapsalon.hair/" />
-    <meta name="twitter:card" content="summary_large_image" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"
@@ -57,17 +41,29 @@
   <body>
     <header>
       <div class="topbar">
-        <span>📞 06 43 20 36 55</span>
-        <span>📧 kinderkapsalonwendys@gmail.com</span>
+        <a href="tel:0643203655">📞 06 43 20 36 55</a>
+        <a href="mailto:kinderkapsalonwendys@gmail.com"
+          >📧 kinderkapsalonwendys@gmail.com</a
+        >
       </div>
+
       <div class="navbar">
-        <img src="images/logo.png" alt="Wendy's logo" class="logo" />
-        <nav>
-          <a href="index.html">Home</a>
+        <a href="index.html"
+          ><img src="images/logo.png" alt="Wendy's logo" class="logo"
+        /></a>
+
+        <button class="hamburger" aria-label="Open menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="nav-menu">
+          <a href="index.html" class="active">Home</a>
           <a href="over-ons.html">Over ons</a>
           <a href="contact.html">Contact</a>
           <a href="reserveringen.html">Reserveer</a>
-          <a href="galerij.html">galerij</a>
+          <a href="galerij.html">Galerij</a>
         </nav>
       </div>
     </header>
@@ -76,57 +72,26 @@
       <section class="hero">
         <h1>Welkom bij Wendy's Kinderkapsalon</h1>
         <p>
-          Dé kinderkapsalon waar jouw kind kind zich helemaal op z'n gemak
-          voelt!
+          Dé kinderkapsalon waar jouw kind zich helemaal op z'n gemak voelt!
         </p>
-        <h3>Knappe koppen niet te stoppen!</h3>
-        <br />
+
+        <h3 class="subtitle">Knappe koppen niet te stoppen!</h3>
+
         <img
           src="images/Amsterdam-binnen.jpg"
           alt="Binnen bij Amsterdam"
           loading="lazy"
-          class="effect"
+          class="effect hero-img"
         />
+
         <a
           href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
           class="btn"
-          id="reserve-whatsapp"
+          target="_blank"
+          rel="noopener"
         >
-          📞 Bel of app nu om te reserveren voor een knipbeurt
+          📞 Bel of app nu om te reserveren
         </a>
-        <script>
-          (function () {
-            const el = document.getElementById("reserve-whatsapp");
-            if (!el) return;
-            el.addEventListener("click", function (e) {
-              // use international format (NL: 31) — required for reliable behavior on iPhone/WhatsApp
-              const phone = "31643203655";
-              const text = encodeURIComponent(
-                "Ik wil graag een afspraak maken"
-              );
-              const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
-              const webUrl = `https://wa.me/${phone}?text=${text}`;
-
-              // Try opening the native WhatsApp app first. If it doesn't open, fall back to web wa.me.
-              // Use visibilitychange + timeout to detect if the app took focus (common pattern on iOS).
-              e.preventDefault();
-
-              let fallback = setTimeout(() => {
-                window.open(webUrl, "_blank");
-              }, 700);
-
-              const onVisChange = () => {
-                // app opened -> cancel fallback
-                clearTimeout(fallback);
-                document.removeEventListener("visibilitychange", onVisChange);
-              };
-              document.addEventListener("visibilitychange", onVisChange);
-
-              // Attempt to open native app
-              window.location.href = appUrl;
-            });
-          })();
-        </script>
       </section>
 
       <section class="features">
@@ -163,50 +128,67 @@
         Voor onze geweldige themafeestjes, bekijk de feestjes pagina en de
         bijbehorende prijzen!
       </p>
-      <a href="over-ons.html#feestjes" class="btn">Feestjes</a>
-      <hr style="border: 1px solid white" />
+      <a href="over-ons.html#feestjes" class="btn">Bekijk de Feestjes</a>
+
+      <hr class="divider" />
+
       <img
         src="images/Badhoevedorp-voordeur-opening.jpg"
         alt="De voordeur van Badhoevedorp"
         loading="lazy"
-        class="effect"
+        class="effect hero-img"
       />
     </section>
 
     <footer>
       <div class="socials">
-        <a href="https://www.facebook.com/share/1CmGEg3pK6/" target="_blank">
-          <img
+        <a href="https://www.facebook.com/share/1CmGEg3pK6/" target="_blank"
+          ><img
             src="images/social media logo's/facebook.png"
             alt="Facebook"
             width="30"
-          />
-        </a>
+        /></a>
         <a
           href="https://www.instagram.com/wendyskinderkapsalon?igsh=ajdvYXBmNHpiMnRi"
           target="_blank"
-        >
-          <img
+          ><img
             src="images/social media logo's/instagram.png"
             alt="Instagram"
             width="30"
-          />
-        </a>
+        /></a>
         <a
           href="https://www.tiktok.com/@_wendyskinderkapsalon?_t=ZG-8y1fVGN9Ctt&_r=1"
           target="_blank"
-        >
-          <img
+          ><img
             src="images/social media logo's/tiktok.png"
             alt="TikTok"
             width="30"
-          />
-        </a>
+        /></a>
       </div>
       <p class="footerlink">
         © 2025 Wendy’s Kinderkapsalon | Ontwerp & hosting door
-        <a href="https://studiodeerenberg.nl">Studio Deerenberg</a>
+        <a href="https://studiodeerenberg.nl" target="_blank"
+          >Studio Deerenberg</a
+        >
       </p>
     </footer>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Menu sluiten als je op een link klikt
+      document.querySelectorAll(".nav-menu a").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+    </script>
   </body>
 </html>

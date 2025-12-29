@@ -1,14 +1,25 @@
-/* ===== Algemene instellingen ===== */
+/* =========================================
+   1. GLOBAL RESET & TYPOGRAPHY
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Quicksand", sans-serif;
   background: #fff8f4;
   color: #222;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* ===== Typography ===== */
+/* =========================================
+   2. HEADERS & TEXT
+   ========================================= */
 h1,
 h2,
 h3 {
@@ -16,323 +27,22 @@ h3 {
   text-align: center;
   margin-bottom: 0.5em;
   position: relative;
+  font-weight: 600;
 }
+
 h1::after,
 h2::after {
   content: " ✨";
   animation: sparkle 2s infinite alternate;
 }
-@keyframes sparkle {
-  0% {
-    opacity: 1;
-    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ffd700;
-  }
-  100% {
-    opacity: 0.7;
-    text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffffe0;
-  }
-}
 
-p,
-li {
+p {
   font-size: 1.1rem;
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1em auto;
 }
 
-/* ===== Header ===== */
-.topbar {
-  background: #ffb6c1;
-  padding: 0.5em;
-  text-align: center;
-  font-size: 0.9rem;
-  color: white;
-}
-
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #ff69b4;
-  padding: 1em;
-}
-.navbar .logo {
-  max-width: 200px;
-  margin-bottom: 0.5em;
-}
-.navbar nav a {
-  color: white;
-  margin: 0 1em;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-.navbar nav a:focus,
-.navbar nav a:hover {
-  color: #ffd700;
-  text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4;
-  outline: 2px solid #ffd700;
-}
-
-/* ===== Hero sectie ===== */
-.hero {
-  background: linear-gradient(145deg, #ffe6f0, #fff5fa);
-  padding: 3em 1em;
-  text-align: center;
-  opacity: 0;
-  animation: heroFadeIn 1.5s ease-in forwards;
-}
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* ===== Features ===== */
-.features {
-  background-color: #fff0f5;
-  padding: 2em 1em;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: sectionFadeIn 1.2s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.feature-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2em;
-  margin-top: 2em;
-}
-.feature {
-  background: white;
-  border-radius: 1em;
-  padding: 1.5em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 280px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.feature:hover,
-.feature:focus-within {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #ff69b4, 0 0 30px #ffd700;
-  outline: 2px solid #ff69b4;
-}
-
-/* ===== Feestjes, Workshops, About, Team, Contact ===== */
-.feestjes,
-.locatie2,
-.about,
-.team,
-.contact,
-.reserveer {
-  padding: 2em 1em;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: sectionFadeIn 1.2s ease forwards;
-}
-.feestjes,
-.reserveer {
-  animation-delay: 0.4s;
-  background: #fff;
-}
-.locatie2 {
-  animation-delay: 0.5s;
-  background: #e0ffff;
-}
-.about {
-  animation-delay: 0.6s;
-  background: #fdf5e6;
-}
-.team {
-  animation-delay: 0.7s;
-  background: #ffe4e1;
-}
-.contact {
-  animation-delay: 0.8s;
-  background: linear-gradient(135deg, #f0f8ff, #ffe4e1);
-  box-shadow: inset 0 0 30px rgba(255, 182, 193, 0.3);
-}
-
-/* ===== Animaties ===== */
-@keyframes sectionFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Feest Box ===== */
-.feest-box {
-  background: #fff0f5;
-  margin: 1em auto;
-  padding: 1.5em;
-  border-radius: 1em;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* === Nieuw lijstje design === */
-.feest-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.feest-box ul li {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.6em 0;
-  border-bottom: 1px solid #ddd;
-  font-weight: 500;
-  text-align: left;
-}
-
-.feest-box ul li:last-child {
-  border-bottom: none;
-}
-
-.feest-box ul b {
-  display: block;
-  margin: 1em 0 0.5em;
-  text-align: left;
-  font-size: 1.1rem;
-  color: #ff69b4;
-}
-
-/* ===== Buttons ===== */
-.btn,
-.button {
-  display: block;
-  margin: 1em auto;
-  text-align: center;
-  width: fit-content;
-  background: #ff69b4;
-  color: white;
-  padding: 0.7em 1.5em;
-  border-radius: 2em;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 1em;
-  font-size: 1.1em;
-  cursor: pointer;
-  border: none;
-  position: relative;
-  overflow: hidden;
-}
-.btn:hover,
-.button:hover {
-  background: #ff1493;
-}
-.btn:focus,
-.button:focus {
-  outline: 2px solid #ffd700;
-}
-.btn::before,
-.button::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.4) 0%,
-    transparent 80%
-  );
-  animation: glitter-move 3s infinite;
-  pointer-events: none;
-}
-@keyframes glitter-move {
-  0% {
-    transform: translate(0%, 0%) rotate(0deg);
-  }
-  100% {
-    transform: translate(100%, 100%) rotate(360deg);
-  }
-}
-
-/* ===== Footer ===== */
-footer {
-  background: linear-gradient(145deg, #ffb6c1, #ff69b4);
-  color: white;
-  text-align: center;
-  padding: 1.5em;
-  border-top: 4px solid #ffd700;
-  box-shadow: 0 -3px 15px rgba(255, 105, 180, 0.3);
-  position: relative;
-}
-
-footer .socials {
-  margin-top: 0.5em;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap; /* Don't let them wrap to the next line */
-  gap: 10px; /* Even spacing between icons */
-}
-
-footer .socials a {
-  margin: 0 8px;
-  display: inline-block;
-  text-decoration: none;
-}
-
-footer .socials img {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-}
-
-footer .socials img:hover {
-  transform: scale(1.2) rotate(5deg);
-  box-shadow: 0 0 15px #ffd700, 0 0 30px #ff69b4;
-}
-
-footer p {
-  margin-top: 1em;
-  font-size: 0.9rem;
-  color: #fffaf0;
-}
-
-/* ===== Footer Credits / Studio Deerenberg Link ===== */
-.footerlink {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7); /* Niet te fel, anders leidt het af */
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtiel lijntje erboven */
-}
-
-.footerlink a {
-  color: #ffd700; /* Goud, want we houden van bling */
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.footerlink a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff69b4; /* BOEM, glow effect */
-  text-decoration: underline;
-}
-
-/* ===== Rainbow bar under h2 ===== */
 h2::before {
   content: "";
   display: block;
@@ -353,6 +63,373 @@ h2::before {
   bottom: -10px;
   animation: rainbow 4s linear infinite;
 }
+
+/* =========================================
+   3. NAVIGATION (TOPBAR & NAVBAR)
+   ========================================= */
+.topbar {
+  background: #ffb6c1;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.topbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.topbar a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.navbar {
+  background: #ff69b4;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: 0.3s;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #ffd700;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* =========================================
+   4. SECTIONS (General)
+   ========================================= */
+section {
+  padding: 3em 1em;
+  opacity: 0;
+  animation: sectionFadeIn 1.2s ease forwards;
+}
+
+.hero {
+  background: linear-gradient(145deg, #ffe6f0, #fff5fa);
+  padding: 4em 1em;
+  text-align: center;
+  animation: heroFadeIn 1.5s ease-in forwards;
+}
+
+.features {
+  background-color: #fff0f5;
+  animation-delay: 0.3s;
+}
+.locatie2 {
+  background: #e0ffff;
+  animation-delay: 0.5s;
+}
+.team {
+  background: #ffe4e1;
+  animation-delay: 0.7s;
+}
+.contact {
+  background: linear-gradient(135deg, #f0f8ff, #ffe4e1);
+  animation-delay: 0.8s;
+}
+
+.feature-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.feature {
+  background: white;
+  border-radius: 1em;
+  padding: 2em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  flex: 1 1 280px;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.2);
+  outline: 2px solid #ff69b4;
+}
+
+/* =========================================
+   5. FEESTJES GRID & BOXES (FIXED FOTO'S)
+   ========================================= */
+.feestjes {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feestjes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* DIT IS DE TRUC: Rekt alle roze boxen uit tot dezelfde hoogte */
+  gap: 2em;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2em auto;
+}
+
+.feest-box {
+  background: #fff0f5;
+  padding: 2em;
+  border-radius: 1em;
+  flex: 1 1 300px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  border: 1px solid rgba(255, 105, 180, 0.1);
+}
+
+.feest-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.25);
+}
+
+.feest-box h3 {
+  margin-top: 0;
+  color: #ff1493;
+}
+
+.feest-box ul {
+  text-align: left;
+  width: 100%;
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.feest-box li {
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+/* === DE FIX VOOR OVER ONS FOTO'S === */
+.feest-img {
+  width: 100%;
+  height: 300px; /* Vaste hoogte: Iedere foto is nu even groot */
+  object-fit: cover; /* Vul het vakje volledig (geen randjes) */
+  object-position: top center; /* BELANGRIJK: Focus op de bovenkant (hoofden), snij benen eraf */
+  border-radius: 10px;
+  margin-top: auto; /* Duwt foto netjes naar beneden */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Prijzen lijst specifiek */
+.prijs-lijst {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+.prijs-lijst li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ffb6c1;
+  padding: 0.5em 0;
+}
+.optie-titel {
+  margin-top: 1em;
+  font-weight: bold;
+  color: #ff69b4;
+  border-bottom: none !important;
+}
+.prijs {
+  font-weight: bold;
+  color: #ff69b4;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* =========================================
+   6. BUTTONS & UI
+   ========================================= */
+.btn,
+.button {
+  display: block;
+  width: fit-content;
+  margin: 1.5em auto;
+  background: #ff69b4;
+  color: white;
+  padding: 0.8em 2em;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.btn:hover {
+  background: #ff1493;
+  transform: scale(1.05);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 80%
+  );
+  animation: glitter-move 3s infinite;
+  pointer-events: none;
+}
+
+/* Algemene plaatjes - Behalve specifieke classes */
+img:not(.logo):not(.gallery-grid img):not(.feest-img):not(.hero-img) {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em auto;
+  display: block;
+  border-radius: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === DE FIX VOOR INDEX HERO FOTO === */
+.hero-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto; /* Was max-height 400px - nu vrij */
+  object-fit: contain; /* Geen cropping meer */
+  margin-bottom: 2em;
+  border-radius: 1em;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+}
+
+.feest-img-main {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1em;
+}
+
+.divider {
+  border: 0;
+  border-top: 2px dashed #ffb6c1;
+  margin: 3em auto;
+  width: 60%;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+  background: linear-gradient(145deg, #ffb6c1, #ff69b4);
+  color: white;
+  text-align: center;
+  padding: 2em 1em;
+  border-top: 5px solid #ffd700;
+  margin-top: auto;
+}
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1em;
+}
+footer .socials img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  background: white;
+  padding: 2px;
+  margin: 0;
+  box-shadow: none;
+}
+footer .socials img:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+.footerlink a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================================
+   8. ANIMATIES
+   ========================================= */
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 5px #ff69b4;
+  }
+  100% {
+    opacity: 0.7;
+    text-shadow: 0 0 15px #ffd700;
+  }
+}
 @keyframes rainbow {
   0% {
     background-position: 0%;
@@ -361,190 +438,72 @@ h2::before {
     background-position: 100%;
   }
 }
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glitter-move {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(360deg);
+  }
+}
 
-/* ===== Gallery ===== */
+/* =========================================
+   9. EXTRA'S (K-Pop, Modal)
+   ========================================= */
+/* Gallery Sectie (Home) */
 .gallery-section {
   background: #fff0f5;
-  padding: 2em 1em;
-  text-align: center;
   border-radius: 1.5em;
-  box-shadow: 0 0 18px rgba(255, 105, 180, 0.1);
   margin: 2em auto;
   max-width: 1200px;
-  animation: sectionFadeIn 1.2s ease forwards;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5em;
-  justify-items: center;
-}
-.gallery-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 1em;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background: #fff;
-}
-.gallery-grid img:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 0 20px #ffb6c1, 0 0 30px #ffd700;
-  outline: 2px solid #ffd700;
 }
 
-/* ===== Responsive losse foto's ===== */
-img:not(.logo):not(.gallery-grid img) {
-  max-width: 95%;
-  height: auto;
-  margin: 1em auto;
-  display: block;
-  border-radius: 1em;
-  object-fit: contain;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-img:not(.logo):not(.gallery-grid img):hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-img:not(.logo):not(.gallery-grid img):active {
-  transform: scale(0.98);
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.feest-img {
-  height: 50%;
-  width: 50%;
-  object-fit: cover;
-  border-radius: 1em;
-  margin-top: 1em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ===== Booking widget & Map ===== */
-.booking-widget-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.booking-widget-container > * {
-  flex: 0 0 auto;
-}
-
-.map-container {
-  max-width: 600px;
-  margin: 2rem auto 0;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-}
-.map-container iframe {
-  width: 100%;
-  height: 350px;
-  border: none;
-  display: block;
-}
-
-/* ===== Accessibility: Focus ===== */
-a:focus,
-button:focus,
-.btn:focus,
-.feature:focus-within {
-  outline: 2px solid #ffd700;
-  outline-offset: 2px;
-}
-
-/* ===== Media Queries ===== */
-@media (max-width: 768px) {
-  .feature-boxes {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5em;
-  }
-  .navbar nav a {
-    margin: 0 0.5em;
-  }
-  .hero,
-  .features,
-  .feestjes,
-  .workshops,
-  .about,
-  .team,
-  .contact .reserveer {
-    padding: 1.5em 0.5em;
-  }
-}
-
-/* --- Kpop slider (scoped) --- */
-/* — Fix Kpop slider so the image shows fully, no cropping, no forced ratio — */
-.feest-box .kpop-slider-li {
-  display: block; /* stop fighting the ul li flex layout */
-  padding: 0;
-  border-bottom: none;
-}
-
+/* K-Pop Slider Logic */
 .feest-box .kpop-slider {
   width: 100%;
-  max-width: 900px; /* optional cap; delete if you want full width */
   margin: 12px auto 0;
   display: grid;
   gap: 10px;
 }
-
-.feest-box .kpop-frame {
-  /* no fixed aspect-ratio, no height: the image defines the height */
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  overflow: visible;
-}
-
 .feest-box .kpop-frame img {
-  display: block;
-  width: 100%; /* responsive */
-  height: auto; /* keep natural aspect ratio */
-  object-fit: contain; /* no cropping ever */
-  background: transparent;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
 }
-
 .feest-box .kpop-controls {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 10px;
+  margin-top: 10px;
 }
 .feest-box .kpop-controls button {
   background: #ff69b4;
   color: #fff;
-  border: 0;
-  padding: 8px 12px;
+  border: none;
+  padding: 8px 15px;
   border-radius: 10px;
-  font-weight: 700;
   cursor: pointer;
-}
-.feest-box .kpop-controls button:hover {
-  background: #ff1493;
-}
-.feest-box .kpop-controls button:focus {
-  outline: 2px solid #ffd700;
-}
-.feest-box .kpop-dots {
-  display: flex;
-  gap: 6px;
 }
 .feest-box .kdot {
   width: 10px;
@@ -556,13 +515,24 @@ button:focus,
   background: #ff69b4;
 }
 
-/* --- Voorwaarden --- */
-/* Verborgen element-helper */
-.hidden {
-  display: none !important;
+/* Booking / Maps */
+.booking-widget-container,
+.map-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.map-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
 }
 
-/* Overlay voor voorwaarden-popup */
+/* =========================================
+   10. POP-UP MODAL (Voorwaarden)
+   ========================================= */
 .voorwaarden-overlay {
   position: fixed;
   inset: 0;
@@ -570,84 +540,138 @@ button:focus,
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 2000;
 }
-
-/* De modal zelf */
+.hidden {
+  display: none !important;
+}
 .voorwaarden-modal {
-  background-color: #ffffff;
+  background-color: #fff;
   max-width: 600px;
   width: 90%;
-  max-height: 80vh;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  font-family: "Quicksand", Arial, sans-serif;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
 }
-
-.voorwaarden-modal h2 {
-  margin: 0;
-  font-size: 1.4rem;
-}
-
-/* Scrollbare tekst */
 .voorwaarden-content {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
   overflow-y: auto;
   max-height: 50vh;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  text-align: left;
 }
-
-/* Improve touch scrolling on iOS Safari */
-.voorwaarden-content {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-}
-
-/* Knoppen onderin de modal */
 .voorwaarden-actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 8px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
 }
-
-.voorwaarden-actions button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-#voorwaarden-annuleer {
-  background-color: #eeeeee;
-  color: #333333;
-}
-
-#voorwaarden-akkoord:disabled {
-  background-color: #cccccc;
-  color: #666666;
-  cursor: not-allowed;
-}
-
-#voorwaarden-akkoord:not(:disabled) {
-  background-color: #28a745;
-  color: #ffffff;
-}
-
-/* Prevent background scrolling when a modal/overlay is open. */
 body.no-scroll {
-  position: fixed;
-  left: 0;
-  right: 0;
-  width: 100%;
   overflow: hidden;
+}
+
+/* =========================================
+   11. MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background-color: #ff69b4;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 2rem 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+  .nav-menu a {
+    font-size: 1.5rem;
+    width: 100%;
+    display: block;
+    padding: 1rem;
+  }
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* =========================================
+   POP-UP MODAL (De reparatie!)
+   ========================================= */
+
+/* De achtergrond van de pop-up (standaard verborgen) */
+.voorwaarden-overlay {
+  position: fixed; /* Blijft vast op het scherm staan */
+  inset: 0; /* Vult het hele scherm */
+  background-color: rgba(0, 0, 0, 0.6); /* Donkere achtergrond */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Zorgt dat hij BOVEN alles ligt */
+}
+
+/* De klasse die hem verbergt */
+.hidden {
+  display: none !important;
+}
+
+/* Het witte venster zelf */
+.voorwaarden-modal {
+  background-color: #fff;
+  max-width: 600px;
+  width: 90%;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* De tekst met scrollbalk */
+.voorwaarden-content {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  overflow-y: auto; /* Zorgt voor scrollbalk als tekst te lang is */
+  max-height: 50vh;
+  text-align: left; /* Zorgt dat de voorwaarden tekst leesbaar links staat */
+}
+
+/* De knoppen onderin de pop-up */
+.voorwaarden-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-L1Z2ELV5GF"
@@ -19,64 +18,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
+      content="Bekijk de vrolijke foto's van Wendy's Kinderkapsalon in Amsterdam en Badhoevedorp."
     />
-    <meta
-      name="keywords"
-      content="Kinderkapsalon, Knippen, Feestjes, Wendy, Kinderen, Haar, Kapsel"
-    />
-    <meta name="author" content="Wendy's Kinderkapsalon" />
-
-    <title>Wendy's Kinderkapsalon - Home</title>
+    <title>Wendy's Kinderkapsalon - Galerij</title>
     <link
       rel="canonical"
       href="https://wendyskinderkapsalon.hair/galerij.html"
     />
-
     <link rel="icon" href="images/Favicon.png" type="image/x-icon" />
 
-    <meta
-      property="og:title"
-      content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
-    />
+    <meta property="og:title" content="Wendy's Kinderkapsalon - Galerij" />
     <meta
       property="og:description"
-      content="Knippen en feestjes voor kinderen in een vrolijke sfeer."
+      content="Kijk mee in onze gezellige salons!"
     />
     <meta
       property="og:image"
       content="https://wendyskinderkapsalon.hair/images/logo.png"
     />
     <meta property="og:url" content="https://wendyskinderkapsalon.hair/" />
-    <meta name="twitter:card" content="summary_large_image" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/style.css" />
+
+    <style>
+      /* We overschrijven de standaard grid met kolommen */
+      .gallery-grid {
+        display: block; /* Reset grid */
+        column-count: 3; /* 3 mooie kolommen naast elkaar */
+        column-gap: 1.5em; /* Ruimte tussen de kolommen */
+      }
+
+      .gallery-grid img {
+        width: 100% !important; /* Vul de breedte van de kolom */
+        height: auto !important; /* Hoogte past zich automatisch aan */
+        margin-bottom: 1.5em; /* Ruimte onder elke foto */
+        display: block;
+        border-radius: 1em;
+        break-inside: avoid; /* Voorkomt dat een foto in tweeën wordt geknipt */
+        object-fit: contain !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+      }
+
+      /* Op mobiel gewoon alles onder elkaar */
+      @media (max-width: 768px) {
+        .gallery-grid {
+          column-count: 1;
+        }
+      }
+    </style>
   </head>
 
   <body>
     <header>
       <div class="topbar">
-        <span>📞 06 43 20 36 55</span>
-        <span>📧 kinderkapsalonwendys@gmail.com</span>
+        <a href="tel:0643203655">📞 06 43 20 36 55</a>
+        <a href="mailto:kinderkapsalonwendys@gmail.com"
+          >📧 kinderkapsalonwendys@gmail.com</a
+        >
       </div>
+
       <div class="navbar">
-        <img src="images/logo.png" alt="Wendy's logo" class="logo" />
-        <nav>
-          <a href="index.html">Home</a>
+        <a href="index.html"
+          ><img src="images/logo.png" alt="Wendy's logo" class="logo"
+        /></a>
+
+        <button class="hamburger" aria-label="Open menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="nav-menu">
+          <a href="index.html" class="active">Home</a>
           <a href="over-ons.html">Over ons</a>
           <a href="contact.html">Contact</a>
           <a href="reserveringen.html">Reserveer</a>
-          <a href="galerij.html">galerij</a>
+          <a href="galerij.html">Galerij</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- Section 1 -->
       <section class="gallery-section">
         <h2>Fotogalerij – Badhoevedorp</h2>
         <p>
@@ -87,75 +119,72 @@
         <div class="gallery-grid">
           <img
             src="images/Badhoevedorp-voordeur-opening.jpg"
-            alt="De nieuwe opening in Badhoevedorp"
+            alt="Opening Badhoevedorp"
             loading="lazy"
           />
           <img
             src="images/Badhoevedorp-kind-pose.jpg"
-            alt="Unieke kapsels en blije gezichten"
+            alt="Blije gezichten"
             loading="lazy"
           />
           <img
             src="images/Badhoevedorp-vlechten.jpg"
-            alt="Gevlecht worden in de kapsalon"
+            alt="Vlechten"
             loading="lazy"
           />
           <img
             src="images/Badhoevedorp-glitter-knutsel.jpg"
-            alt="Leuk knutselen met glitter"
+            alt="Knutselen met glitter"
             loading="lazy"
           />
           <img
             src="images/Badhoevedorp-kind-nieuw-kapsel.jpg"
-            alt="Mooi nieuw kapsel met glitter"
+            alt="Nieuw kapsel"
             loading="lazy"
           />
           <img
             src="images/Badhoevedorp-nagels-lakken.jpg"
-            alt="Nagels lakken met z'n allen"
+            alt="Nagels lakken"
             loading="lazy"
           />
           <img
             src="images/Badhoevedorp-kind-gevlecht-worden.jpg"
-            alt="Gevlecht worden in de kapsalon"
+            alt="Vlechten in actie"
             loading="lazy"
           />
         </div>
       </section>
 
-      <!-- Section 2 -->
       <section class="gallery-section">
         <h2>Fotogalerij – Amsterdam</h2>
         <p>
           Ooit begonnen als een kleine kinderkapsalon, uitgegroeid tot de
-          gezelligste kapperszaak van Amsterdam! We knippen hier kinderen van
-          alle leeftijden en vieren de leukste kinderparty's!
+          gezelligste kapperszaak van Amsterdam!
         </p>
         <div class="gallery-grid">
           <img
             src="images/Amsterdam-binnen.jpg"
-            alt="De leuke knipstoelen in Amsterdam"
+            alt="Interieur Amsterdam"
             loading="lazy"
           />
           <img
             src="images/Amsterdam-voorkant.jpg"
-            alt="De mooie Amsterdam kapsalon"
+            alt="Voorkant Amsterdam"
             loading="lazy"
           />
           <img
             src="images/Amsterdam-3kinderen-show.jpg"
-            alt="De mooie Amsterdam kapsalon"
+            alt="Kinderen showen haar"
             loading="lazy"
           />
           <img
             src="images/Amsterdam-knipstoelen.jpg"
-            alt="De leuke knipstoelen in Amsterdam"
+            alt="Knipstoelen"
             loading="lazy"
           />
         </div>
       </section>
 
-      <!-- Section 3 -->
       <section class="gallery-section">
         <h2>Fotogalerij – Vlechten</h2>
         <p>
@@ -165,32 +194,32 @@
         <div class="gallery-grid">
           <img
             src="images/Vlechten-blauw.jpg"
-            alt="Mooi gevlecht haar, in het blauw"
+            alt="Blauwe vlecht"
             loading="lazy"
           />
           <img
             src="images/Vlechten-Bubble braids!!!.jpg"
-            alt="Mooi gevlecht haar, in met Bubble braids"
+            alt="Bubble braids"
             loading="lazy"
           />
           <img
             src="images/Vlechten-oranje.jpg"
-            alt="Mooi gevlecht haar, in het oranje"
+            alt="Oranje vlecht"
             loading="lazy"
           />
           <img
             src="images/Vlechten-rood-rose-strik.jpg"
-            alt="Mooi gevlecht haar, in het gekleurd"
+            alt="Rood roze met strik"
             loading="lazy"
           />
           <img
             src="images/Vlechten-rood-rose.jpg"
-            alt="Mooi gevlecht haar, in het gekleurd"
+            alt="Rood roze vlecht"
             loading="lazy"
           />
           <img
             src="images/Vlechten-rose.jpg"
-            alt="Mooi gevlecht haar, in het roze"
+            alt="Roze vlecht"
             loading="lazy"
           />
         </div>
@@ -199,38 +228,54 @@
 
     <footer>
       <div class="socials">
-        <a href="https://www.facebook.com/share/1CmGEg3pK6/" target="_blank">
-          <img
+        <a href="https://www.facebook.com/share/1CmGEg3pK6/" target="_blank"
+          ><img
             src="images/social media logo's/facebook.png"
             alt="Facebook"
             width="30"
-          />
-        </a>
+        /></a>
         <a
           href="https://www.instagram.com/wendyskinderkapsalon?igsh=ajdvYXBmNHpiMnRi"
           target="_blank"
-        >
-          <img
+          ><img
             src="images/social media logo's/instagram.png"
             alt="Instagram"
             width="30"
-          />
-        </a>
+        /></a>
         <a
           href="https://www.tiktok.com/@_wendyskinderkapsalon?_t=ZG-8y1fVGN9Ctt&_r=1"
           target="_blank"
-        >
-          <img
+          ><img
             src="images/social media logo's/tiktok.png"
             alt="TikTok"
             width="30"
-          />
-        </a>
+        /></a>
       </div>
       <p class="footerlink">
         © 2025 Wendy’s Kinderkapsalon | Ontwerp & hosting door
-        <a href="https://studiodeerenberg.nl">Studio Deerenberg</a>
+        <a href="https://studiodeerenberg.nl" target="_blank"
+          >Studio Deerenberg</a
+        >
       </p>
     </footer>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-menu a").forEach((n) =>
+          n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          })
+        );
+      }
+    </script>
   </body>
 </html>

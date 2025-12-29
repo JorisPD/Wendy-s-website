@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-L1Z2ELV5GF"
@@ -21,13 +20,7 @@
       name="description"
       content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
     />
-    <meta
-      name="keywords"
-      content="Kinderkapsalon, Knippen, Feestjes, Wendy, Kinderen, Haar, Kapsel"
-    />
-    <meta name="author" content="Wendy's Kinderkapsalon" />
-
-    <title>Wendy's Kinderkapsalon - Home</title>
+    <title>Wendy's Kinderkapsalon - Over Ons</title>
     <link
       rel="canonical"
       href="https://wendyskinderkapsalon.hair/over-ons.html"
@@ -35,10 +28,7 @@
 
     <link rel="icon" href="images/Favicon.png" type="image/x-icon" />
 
-    <meta
-      property="og:title"
-      content="Wendy's Kinderkapsalon - Knippen en feestjes voor kinderen in een vrolijke sfeer."
-    />
+    <meta property="og:title" content="Wendy's Kinderkapsalon - Over Ons" />
     <meta
       property="og:description"
       content="Knippen en feestjes voor kinderen in een vrolijke sfeer."
@@ -48,7 +38,6 @@
       content="https://wendyskinderkapsalon.hair/images/logo.png"
     />
     <meta property="og:url" content="https://wendyskinderkapsalon.hair/" />
-    <meta name="twitter:card" content="summary_large_image" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"
@@ -60,17 +49,29 @@
   <body>
     <header>
       <div class="topbar">
-        <span>📞 06 43 20 36 55</span>
-        <span>📧 kinderkapsalonwendys@gmail.com</span>
+        <a href="tel:0643203655">📞 06 43 20 36 55</a>
+        <a href="mailto:kinderkapsalonwendys@gmail.com"
+          >📧 kinderkapsalonwendys@gmail.com</a
+        >
       </div>
+
       <div class="navbar">
-        <img src="images/logo.png" alt="Wendy's logo" class="logo" />
-        <nav>
-          <a href="index.html">Home</a>
+        <a href="index.html"
+          ><img src="images/logo.png" alt="Wendy's logo" class="logo"
+        /></a>
+
+        <button class="hamburger" aria-label="Open menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="nav-menu">
+          <a href="index.html" class="active">Home</a>
           <a href="over-ons.html">Over ons</a>
           <a href="contact.html">Contact</a>
           <a href="reserveringen.html">Reserveer</a>
-          <a href="galerij.html">galerij</a>
+          <a href="galerij.html">Galerij</a>
         </nav>
       </div>
     </header>
@@ -85,84 +86,79 @@
 
         <h2>De kapper</h2>
         <p>
-          Ons team is gespecialiseerd in het knippen en vlechten van kinderen,
-          wij doen ons best om er een zo goed maar ook zo leuke mogelijke
+          Ons team is gespecialiseerd in het knippen en vlechten van kinderen.
+          Wij doen ons best om er een zo goed maar ook zo leuk mogelijke
           ervaring van te maken!
         </p>
       </section>
 
       <section class="feestjes" id="feestjes">
         <h2>Feestjes</h2>
-        <div class="feest-box">
-          <h3>✨ Kpop Demon Hunters Party</h3>
-          <ul>
-            <li>🎤 Beautyparty met extra's in een Kpop Demon Hunters thema.</li>
-            <li>
-              🎨 Zingen, limonade, ijs, knutselen, spelletjes en eindigen met
-              een glow in the dark Huntrix disco!
-            </li>
-            <li>🍿 Ga met een echt Rumi kapsel naar huis!</li>
-            <li>
-              <a href="reserveringen.html" class="btn">reserveringen</a>
-            </li>
-          </ul>
-          <img
-            src="images/rumi-met-meisje.jpg"
-            alt="feestje"
-            loading="lazy"
-            class="feest-img"
-          />
-        </div>
-        <div class="feest-box">
-          <h3>✨ Beauty Party</h3>
-          <ul>
-            <li>🎤 We zingen voor de jarige en geven cadeautjes.</li>
-            <li>
-              🎨 We knutselen, kleuren placemats in, versieren diadeems, krijgen
-              hairextensions, glittergel en gelakte nageltjes.
-            </li>
-            <li>
-              🍿 Met popcorn, spelletjes, een ijsje én een knallende glow in the
-              dark disco sluiten we af!
-            </li>
-          </ul>
-        </div>
-        <div class="feest-box">
-          <h3>🧖 Spa Party</h3>
-          <ul>
-            <li>🎤 We zingen voor de jarige en pakken cadeautjes uit.</li>
-            <li>
-              🛁 In badjas genieten we van een maskertje, make-up, gelakte
-              nagels en glitterhaar.
-            </li>
-            <li>
-              🍿 Met popcorn, spelletjes en een ijsje eindigen we in een glow in
-              the dark disco!
-            </li>
-          </ul>
-          <img
-            src="images/spa-foto.png"
-            alt="feestje"
-            loading="lazy"
-            class="feest-img"
-          />
-        </div>
-        <div class="feest-box">
-          <h3>📸 Foto Shoot Party</h3>
-          <ul>
-            <li>🎤 We zingen voor de jarige en geven cadeautjes.</li>
-            <li>
-              ✨ We versieren een fotolijstje, met glitterhaar maken we een
-              mooie groepsfoto met het lijstje!
-            </li>
-            <li>
-              🍿 Popcorn, ijsje, glow disco en naar huis met een foto in het
-              zelfgemaakte lijstje!
-            </li>
-          </ul>
+
+        <div class="feestjes-grid">
+          <div class="feest-box">
+            <h3>✨ Kpop Demon Hunters Party</h3>
+            <ul>
+              <li>
+                🎤 Beautyparty met extra's in een Kpop Demon Hunters thema.
+              </li>
+              <li>
+                🎨 Zingen, limonade, ijs, knutselen, spelletjes en glow disco!
+              </li>
+              <li>🍿 Ga met een echt Rumi kapsel naar huis!</li>
+              <li>
+                <a
+                  href="reserveringen.html"
+                  class="btn"
+                  style="margin-top: 0.5em"
+                  >Reserveren</a
+                >
+              </li>
+            </ul>
+            <img
+              src="images/rumi-met-meisje.jpg"
+              alt="Kpop feestje"
+              loading="lazy"
+              class="feest-img"
+            />
+          </div>
+
+          <div class="feest-box">
+            <h3>✨ Beauty Party</h3>
+            <ul>
+              <li>🎤 We zingen voor de jarige en geven cadeautjes.</li>
+              <li>🎨 Knutselen, kleuren, diadeems, extensions en nageltjes.</li>
+              <li>
+                🍿 Popcorn, ijsje én een knallende glow in the dark disco!
+              </li>
+            </ul>
+          </div>
+
+          <div class="feest-box">
+            <h3>🧖 Spa Party</h3>
+            <ul>
+              <li>🎤 We zingen voor de jarige en pakken cadeautjes uit.</li>
+              <li>🛁 In badjas genieten: maskertje, make-up en nagels.</li>
+              <li>🍿 Popcorn, spelletjes, ijsje en glow in the dark disco!</li>
+            </ul>
+            <img
+              src="images/spa-foto.png"
+              alt="Spa feestje"
+              loading="lazy"
+              class="feest-img"
+            />
+          </div>
+
+          <div class="feest-box">
+            <h3>📸 Foto Shoot Party</h3>
+            <ul>
+              <li>🎤 We zingen voor de jarige en geven cadeautjes.</li>
+              <li>✨ Versier een fotolijstje en maak een groepsfoto!</li>
+              <li>🍿 Popcorn, ijsje, glow disco en foto mee naar huis!</li>
+            </ul>
+          </div>
         </div>
       </section>
-
       <h2>Prijzen voor feestjes</h2>
 
       <section class="feestjes" id="prijzen">
@@ -174,38 +170,51 @@
               <span class="prijs">€32,50</span>
             </li>
             <li>
-              <span class="omschrijving"
-                >Knippen kinderen zaterdag & zondag</span
-              >
+              <span class="omschrijving">Knippen kinderen (za & zo)</span>
               <span class="prijs">€35</span>
             </li>
             <li>
               <span class="omschrijving">Knippen vanaf 13 jaar</span>
               <span class="prijs">€35</span>
             </li>
-            <li class="optie-titel">Optioneel & mega tof:</li>
+
+            <li
+              class="optie-titel"
+              style="
+                border: none;
+                color: #ff69b4;
+                margin-top: 1em;
+                font-weight: bold;
+              "
+            >
+              Optioneel & mega tof:
+            </li>
+
             <li>
               <span class="omschrijving"
-                >Knippen en vlechten (inclusief nephaar + glitters)</span
+                >Knippen en vlechten (incl. nephaar + glitters)</span
               >
               <span class="prijs">€45</span>
             </li>
             <li>
               <span class="omschrijving"
-                >Alleen vlechten (inclusief nephaar + glitters)</span
+                >Alleen vlechten (incl. nephaar + glitters)</span
               >
               <span class="prijs">€30</span>
             </li>
+          </ul>
 
-            <a
-              href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
-              class="btn"
-              id="reserve-whatsapp"
-            >
-              📞 Bel of app nu om te reserveren voor een knipbeurt
-            </a>
+          <a
+            href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+          >
+            📞 Bel of app nu voor een knipbeurt
+          </a>
 
-            <h2>💰 Prijzen voor Beautyparty & Fotoshoot-Party!</h2>
+          <h2>💰 Prijzen voor Beautyparty & Fotoshoot-Party!</h2>
+          <ul class="prijs-lijst">
             <li>
               <span class="omschrijving">Tot en met 8 kinderen</span>
               <span class="prijs">€300</span>
@@ -214,27 +223,19 @@
               <span class="omschrijving">Per extra kind</span>
               <span class="prijs">€20</span>
             </li>
-            <li class="optie-titel">Optioneel & mega tof:</li>
-            <li>
-              <span class="omschrijving">Cupcake-pakket</span>
-              <span class="prijs">€15</span>
+
+            <li
+              class="optie-titel"
+              style="
+                border: none;
+                color: #ff69b4;
+                margin-top: 1em;
+                font-weight: bold;
+              "
+            >
+              Optioneel & mega tof:
             </li>
-            <li>
-              <span class="omschrijving">Luxe goodie bag</span>
-              <span class="prijs">€7 / stuk</span>
-            </li>
-            <h2>
-              💜✨ Prijzen voor Kpop Demon Hunters Party & Spa-Party! 🎤🔮
-            </h2>
-            <li>
-              <span class="omschrijving">Tot en met 8 kinderen</span>
-              <span class="prijs">€325</span>
-            </li>
-            <li>
-              <span class="omschrijving">Per extra kind</span>
-              <span class="prijs">€25</span>
-            </li>
-            <li class="optie-titel">Optioneel & mega tof:</li>
+
             <li>
               <span class="omschrijving">Cupcake-pakket</span>
               <span class="prijs">€15</span>
@@ -244,6 +245,40 @@
               <span class="prijs">€7 / stuk</span>
             </li>
           </ul>
+
+          <h2>💜✨ Prijzen voor Kpop & Spa-Party! 🎤🔮</h2>
+          <ul class="prijs-lijst">
+            <li>
+              <span class="omschrijving">Tot en met 8 kinderen</span>
+              <span class="prijs">€325</span>
+            </li>
+            <li>
+              <span class="omschrijving">Per extra kind</span>
+              <span class="prijs">€25</span>
+            </li>
+
+            <li
+              class="optie-titel"
+              style="
+                border: none;
+                color: #ff69b4;
+                margin-top: 1em;
+                font-weight: bold;
+              "
+            >
+              Optioneel & mega tof:
+            </li>
+
+            <li>
+              <span class="omschrijving">Cupcake-pakket</span>
+              <span class="prijs">€15</span>
+            </li>
+            <li>
+              <span class="omschrijving">Luxe goodie bag</span>
+              <span class="prijs">€7 / stuk</span>
+            </li>
+          </ul>
+
           <img
             src="images/cupcakes-foto.png"
             alt="cupcakes"
@@ -295,33 +330,30 @@
       </div>
       <p class="footerlink">
         © 2025 Wendy’s Kinderkapsalon | Ontwerp & hosting door
-        <a href="https://studiodeerenberg.nl">Studio Deerenberg</a>
+        <a href="https://studiodeerenberg.nl" target="_blank"
+          >Studio Deerenberg</a
+        >
       </p>
     </footer>
+
     <script>
-      (function () {
-        const el = document.getElementById("reserve-whatsapp");
-        if (!el) return;
-        el.addEventListener("click", function (e) {
-          const phone = "31643203655";
-          const text = encodeURIComponent("✂️ Ik wil graag een afspraak maken");
-          const appUrl = `whatsapp://send?phone=${phone}&text=${text}`;
-          const webUrl = `https://wa.me/${phone}?text=${text}`;
-          e.preventDefault();
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
 
-          let fallback = setTimeout(() => {
-            window.open(webUrl, "_blank");
-          }, 700);
-
-          const onVisChange = () => {
-            clearTimeout(fallback);
-            document.removeEventListener("visibilitychange", onVisChange);
-          };
-          document.addEventListener("visibilitychange", onVisChange);
-
-          window.location.href = appUrl;
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
         });
-      })();
+
+        // Sluit menu als er op een link geklikt wordt
+        document.querySelectorAll(".nav-menu a").forEach((n) =>
+          n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          })
+        );
+      }
     </script>
   </body>
 </html>
