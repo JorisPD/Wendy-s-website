@@ -42,20 +42,19 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
-      /* We overschrijven de standaard grid met kolommen */
       .gallery-grid {
-        display: block; /* Reset grid */
-        column-count: 3; /* 3 mooie kolommen naast elkaar */
-        column-gap: 1.5em; /* Ruimte tussen de kolommen */
+        display: block;
+        column-count: 3;
+        column-gap: 1.5em;
       }
 
       .gallery-grid img {
-        width: 100% !important; /* Vul de breedte van de kolom */
-        height: auto !important; /* Hoogte past zich automatisch aan */
-        margin-bottom: 1.5em; /* Ruimte onder elke foto */
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 1.5em;
         display: block;
         border-radius: 1em;
-        break-inside: avoid; /* Voorkomt dat een foto in tweeën wordt geknipt */
+        break-inside: avoid;
         object-fit: contain !important;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s;
@@ -66,7 +65,6 @@
         box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
       }
 
-      /* Op mobiel gewoon alles onder elkaar */
       @media (max-width: 768px) {
         .gallery-grid {
           column-count: 1;
@@ -107,8 +105,8 @@
 
     <main>
       <section class="gallery-section">
-        <h2>Fotogalerij – Badhoevedorp</h2>
-        <p>
+        <h2 data-editable>Fotogalerij – Badhoevedorp</h2>
+        <p data-editable>
           Deze foto's zijn gemaakt op onze nieuwe locatie in Badhoevedorp. Hier
           vieren we de leukste kinderfeestjes en knippen we in een vrolijke
           sfeer!
@@ -153,8 +151,8 @@
       </section>
 
       <section class="gallery-section">
-        <h2>Fotogalerij – Amsterdam</h2>
-        <p>
+        <h2 data-editable>Fotogalerij – Amsterdam</h2>
+        <p data-editable>
           Ooit begonnen als een kleine kinderkapsalon, uitgegroeid tot de
           gezelligste kapperszaak van Amsterdam!
         </p>
@@ -183,8 +181,8 @@
       </section>
 
       <section class="gallery-section">
-        <h2>Fotogalerij – Vlechten</h2>
-        <p>
+        <h2 data-editable>Fotogalerij – Vlechten</h2>
+        <p data-editable>
           De kapsters zijn ervaren in het invlechten van het haar. We maken de
           mooiste creaties met hair-extensions, strikjes en glittergel.
         </p>
