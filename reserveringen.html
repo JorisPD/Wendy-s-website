@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
   <head>
     <script
@@ -21,7 +21,10 @@
       content="Reserveer je kinderfeestje of knipbeurt bij Wendy's Kinderkapsalon in Amsterdam of Badhoevedorp."
     />
     <title>Wendy's Kinderkapsalon - Reserveren</title>
-    <link rel="" href="https://wendyskinderkapsalon.hair/reserveringen.html" />
+    <link
+      rel="canonical"
+      href="https://wendyskinderkapsalon.hair/reserveringen.html"
+    />
     <link rel="icon" href="images/Favicon.png" type="image/x-icon" />
 
     <meta property="og:title" content="Wendy's Kinderkapsalon - Reserveren" />
@@ -407,160 +410,19 @@
         /></a>
       </div>
       <p class="footerlink">
-        © 2025 Wendy’s Kinderkapsalon | Ontwerp & hosting door
+        © 2025 Wendy’s Kinderkapsalon |
+        <a href="privacyvoorwaarden.html">Privacy</a> |
+        <a href="cookie-beleid.html">Cookies</a> |
+        <a href="algemene-voorwaarden.html">Voorwaarden</a>
+      </p>
+      <p class="footerlink">
+        Ontwerp & hosting door
         <a href="https://studiodeerenberg.nl" target="_blank"
           >Studio Deerenberg</a
         >
       </p>
     </footer>
 
-    <script>
-      // 1. Hamburger Menu Logic
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-      if (hamburger && navMenu) {
-        hamburger.addEventListener("click", () => {
-          hamburger.classList.toggle("active");
-          navMenu.classList.toggle("active");
-        });
-        document.querySelectorAll(".nav-menu a").forEach((n) =>
-          n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-          })
-        );
-      }
-
-      // 2. K-Pop Slider Logic
-      const IMAGES = [
-        "images/kpop-haar.jpg",
-        "images/rumi-met-meisje.jpg",
-        "images/kpop-pompoen.jpg",
-      ];
-      IMAGES.forEach((src) => {
-        const i = new Image();
-        i.src = src;
-      });
-
-      const img = document.getElementById("kpop-view");
-      const prev = document.getElementById("kpop-prev");
-      const next = document.getElementById("kpop-next");
-      const dotsWrap = document.getElementById("kpop-dots");
-
-      if (img && prev && next && dotsWrap) {
-        let i = 0;
-        const dots = IMAGES.map((_, idx) => {
-          const d = document.createElement("span");
-          d.className = "kdot" + (idx === 0 ? " active" : "");
-          d.addEventListener("click", () => go(idx));
-          dotsWrap.appendChild(d);
-          return d;
-        });
-
-        function render() {
-          img.src = IMAGES[i];
-          dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
-        }
-        function go(n) {
-          i = (n + IMAGES.length) % IMAGES.length;
-          render();
-        }
-
-        prev.addEventListener("click", () => go(i - 1));
-        next.addEventListener("click", () => go(i + 1));
-        render();
-      }
-
-      // 3. Booking & Modal Logic
-      const voorwaardenOverlay = document.getElementById("voorwaarden-overlay");
-      const voorwaardenContent = document.getElementById("voorwaarden-content");
-      const voorwaardenAnnuleer = document.getElementById(
-        "voorwaarden-annuleer"
-      );
-      const voorwaardenAkkoord = document.getElementById("voorwaarden-akkoord");
-      const voorwaardenCheckbox = document.getElementById(
-        "voorwaarden-checkbox"
-      );
-      const reserveerTriggers = document.querySelectorAll(".reserveer-trigger");
-
-      let huidigeLocatie = null;
-      const ycbButtons = { amsterdam: null, badhoevedorp: null };
-
-      // Zoek de YCBM knoppen op de achtergrond
-      const ycbInterval = setInterval(() => {
-        if (!ycbButtons.amsterdam)
-          ycbButtons.amsterdam = document.querySelector(
-            '#ycb-hidden [data-ycb="amsterdam"] a, #ycb-hidden [data-ycb="amsterdam"] button'
-          );
-        if (!ycbButtons.badhoevedorp)
-          ycbButtons.badhoevedorp = document.querySelector(
-            '#ycb-hidden [data-ycb="badhoevedorp"] a, #ycb-hidden [data-ycb="badhoevedorp"] button'
-          );
-        if (ycbButtons.amsterdam && ycbButtons.badhoevedorp)
-          clearInterval(ycbInterval);
-      }, 500);
-
-      // Scroll locking functie
-      function toggleScroll(disable) {
-        document.body.style.overflow = disable ? "hidden" : "";
-      }
-
-      // Klik op "Reserveer" knop
-      reserveerTriggers.forEach((trigger) => {
-        trigger.addEventListener("click", (e) => {
-          e.preventDefault(); // Voorkom dat er iets anders gebeurt
-          const locatie = trigger.getAttribute("data-locatie");
-          if (!locatie) return;
-
-          huidigeLocatie = locatie;
-          voorwaardenOverlay.classList.remove("hidden");
-          if (voorwaardenContent) voorwaardenContent.scrollTop = 0;
-
-          // Reset de modal staat
-          if (voorwaardenCheckbox) voorwaardenCheckbox.checked = false;
-          if (voorwaardenAkkoord) voorwaardenAkkoord.disabled = true;
-
-          toggleScroll(true);
-        });
-      });
-
-      // Checkbox logica
-      if (voorwaardenCheckbox && voorwaardenAkkoord) {
-        voorwaardenCheckbox.addEventListener("change", (e) => {
-          voorwaardenAkkoord.disabled = !e.target.checked;
-        });
-      }
-
-      // Annuleren knop
-      if (voorwaardenAnnuleer) {
-        voorwaardenAnnuleer.addEventListener("click", () => {
-          voorwaardenOverlay.classList.add("hidden");
-          huidigeLocatie = null;
-          toggleScroll(false);
-        });
-      }
-
-      // Akkoord knop -> Nu pas naar YCBM!
-      if (voorwaardenAkkoord) {
-        voorwaardenAkkoord.addEventListener("click", () => {
-          voorwaardenOverlay.classList.add("hidden");
-          toggleScroll(false);
-
-          if (!huidigeLocatie) return;
-
-          const knop = ycbButtons[huidigeLocatie];
-          if (knop) {
-            knop.click(); // Klikt op de verborgen knop
-          } else {
-            // Als de YCBM knop niet gevonden is, open direct de link
-            if (huidigeLocatie === "amsterdam")
-              window.open("https://wendyamsterdam.ycb.me", "_blank");
-            else if (huidigeLocatie === "badhoevedorp")
-              window.open("https://wendybadhoevedorp.ycb.me", "_blank");
-          }
-          huidigeLocatie = null;
-        });
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
   <head>
     <script
@@ -21,7 +21,10 @@
       content="Bekijk de vrolijke foto's van Wendy's Kinderkapsalon in Amsterdam en Badhoevedorp."
     />
     <title>Wendy's Kinderkapsalon - Galerij</title>
-    <link rel="" href="https://wendyskinderkapsalon.hair/galerij.html" />
+    <link
+      rel="canonical"
+      href="https://wendyskinderkapsalon.hair/galerij.html"
+    />
     <link rel="icon" href="images/Favicon.png" type="image/x-icon" />
 
     <meta property="og:title" content="Wendy's Kinderkapsalon - Galerij" />
@@ -247,30 +250,19 @@
         /></a>
       </div>
       <p class="footerlink">
-        © 2025 Wendy’s Kinderkapsalon | Ontwerp & hosting door
+        © 2025 Wendy’s Kinderkapsalon |
+        <a href="privacyvoorwaarden.html">Privacy</a> |
+        <a href="cookie-beleid.html">Cookies</a> |
+        <a href="algemene-voorwaarden.html">Voorwaarden</a>
+      </p>
+      <p class="footerlink">
+        Ontwerp & hosting door
         <a href="https://studiodeerenberg.nl" target="_blank"
           >Studio Deerenberg</a
         >
       </p>
     </footer>
 
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-
-      if (hamburger && navMenu) {
-        hamburger.addEventListener("click", () => {
-          hamburger.classList.toggle("active");
-          navMenu.classList.toggle("active");
-        });
-
-        document.querySelectorAll(".nav-menu a").forEach((n) =>
-          n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-          })
-        );
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
