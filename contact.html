@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
   <head>
     <script
@@ -67,9 +67,9 @@
         </button>
 
         <nav class="nav-menu">
-          <a href="index.html" class="active">Home</a>
+          <a href="index.html">Home</a>
           <a href="over-ons.html">Over ons</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html" class="active">Contact</a>
           <a href="reserveringen.html">Reserveer</a>
           <a href="galerij.html">Galerij</a>
         </nav>
@@ -80,7 +80,10 @@
       <section class="contact">
         <h2>Contact & Reserveren</h2>
 
-        <div style="margin-bottom: 2em">
+        <div
+          id="reserveer-intro"
+          style="margin-bottom: 2em; text-align: center"
+        >
           <p data-editable>
             <strong>📍 Amsterdam:</strong> Stadionweg 259, 1076 NZ
           </p>
@@ -110,16 +113,22 @@
             Za: 9:00 - 17:00<br />
             Zo: Op afspraak
           </p>
+
+          <button
+            type="button"
+            class="btn reserveer-trigger"
+            id="open-voorwaarden-btn"
+          >
+            🎉 Reserveer Nu
+          </button>
         </div>
 
-        <a
-          href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
-          class="btn"
-          target="_blank"
-          rel="noopener"
-        >
-          📞 Bel of app nu om te reserveren
-        </a>
+        <div id="aimy-container" class="aimy-container hidden">
+          <iframe
+            src="https://booking.meetaimy.com/booking/salon-selection?salonId=NDY4NDEwNw%3D%3D&email=YW1zdGVyZGFtQHdlbmR5c2tpbmRlcmthcHNhbG9uLm5s"
+            title="Aimy Booking"
+          ></iframe>
+        </div>
 
         <hr class="divider" />
 
@@ -155,6 +164,85 @@
         </div>
       </section>
     </main>
+
+    <div id="voorwaarden-overlay" class="voorwaarden-overlay hidden">
+      <div class="voorwaarden-modal">
+        <h2>Voorwaarden accepteren</h2>
+        <div id="voorwaarden-content" class="voorwaarden-content">
+          <p>
+            <strong>Lees de voorwaarden voordat je reserveert.</strong>
+          </p>
+          <ul>
+            <li data-editable>
+              De feestjesruimtes zijn compleet en feestelijk ingericht.
+            </li>
+            <li data-editable>
+              Annuleren van een feestje kan tot twee weken van tevoren.
+            </li>
+            <li data-editable>
+              Bij feestjes met meer dan 8 kinderen horen we graag 24 uur van
+              tevoren als er wijzigingen zijn.
+            </li>
+            <li data-editable>
+              Gezien de ruimte mogen er maximaal twee volwassenen aanwezig zijn.
+            </li>
+            <li data-editable>
+              Het eerste drankje voor de twee ouders is inbegrepen.
+            </li>
+            <li data-editable>
+              Voor de kinderen wordt onbeperkt limonade en water geschonken.
+            </li>
+            <li data-editable>Er wordt tijd gemaakt voor cadeautjes.</li>
+            <li data-editable>Meld allergieën tijdig.</li>
+          </ul>
+        </div>
+
+        <div class="voorwaarden-actions">
+          <label
+            for="voorwaarden-checkbox"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              cursor: pointer;
+            "
+          >
+            <input
+              type="checkbox"
+              id="voorwaarden-checkbox"
+              style="width: 20px; height: 20px"
+            />
+            <span>Ik heb de voorwaarden gelezen</span>
+          </label>
+          <div
+            style="margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap"
+          >
+            <button
+              type="button"
+              id="voorwaarden-annuleer"
+              style="
+                padding: 10px;
+                background: #ccc;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              "
+            >
+              Annuleer
+            </button>
+            <button
+              type="button"
+              id="voorwaarden-akkoord"
+              disabled
+              class="btn"
+              style="margin: 0; font-size: 0.9em"
+            >
+              Ik ga akkoord
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <div class="socials">

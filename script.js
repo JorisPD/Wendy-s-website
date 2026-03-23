@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderSlide() {
       kpopView.src = IMAGES[currentIndex];
       dots.forEach((dot, idx) =>
-        dot.classList.toggle("active", idx === currentIndex),
+        dot.classList.toggle("active", idx === currentIndex)
       );
     }
 
@@ -81,39 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
     kpopNext.addEventListener("click", () => goToSlide(currentIndex + 1));
   }
 
-  // 3. Booking & Modal Logic (reserveringen.html)
+  // 3. Aimy Booking & Modal Logic (Global)
   const voorwaardenOverlay = document.getElementById("voorwaarden-overlay");
   const voorwaardenContent = document.getElementById("voorwaarden-content");
   const voorwaardenAnnuleer = document.getElementById("voorwaarden-annuleer");
   const voorwaardenAkkoord = document.getElementById("voorwaarden-akkoord");
   const voorwaardenCheckbox = document.getElementById("voorwaarden-checkbox");
-  const reserveerTriggers = document.querySelectorAll(".reserveer-trigger");
+
+  const aimyContainer = document.getElementById("aimy-container");
+  const reserveerIntro = document.getElementById("reserveer-intro");
+
+  // Select any button globally that should open the reservation modal
+  const reserveerTriggers = document.querySelectorAll(
+    ".reserveer-trigger, #open-voorwaarden-btn"
+  );
 
   if (voorwaardenOverlay && reserveerTriggers.length > 0) {
-    let selectedLocation = null;
-    const ycbButtons = { amsterdam: null, badhoevedorp: null };
-
-    // Poll for YCBM buttons
-    const ycbInterval = setInterval(() => {
-      if (!ycbButtons.amsterdam)
-        ycbButtons.amsterdam = document.querySelector(
-          '#ycb-hidden [data-ycb="amsterdam"] a, #ycb-hidden [data-ycb="amsterdam"] button',
-        );
-      if (!ycbButtons.badhoevedorp)
-        ycbButtons.badhoevedorp = document.querySelector(
-          '#ycb-hidden [data-ycb="badhoevedorp"] a, #ycb-hidden [data-ycb="badhoevedorp"] button',
-        );
-
-      if (ycbButtons.amsterdam && ycbButtons.badhoevedorp)
-        clearInterval(ycbInterval);
-    }, 500);
-
     reserveerTriggers.forEach((trigger) => {
       trigger.addEventListener("click", (e) => {
         e.preventDefault();
-        selectedLocation = trigger.getAttribute("data-locatie");
-        if (!selectedLocation) return;
-
         voorwaardenOverlay.classList.remove("hidden");
         if (voorwaardenContent) voorwaardenContent.scrollTop = 0;
         if (voorwaardenCheckbox) voorwaardenCheckbox.checked = false;
@@ -131,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (voorwaardenAnnuleer) {
       voorwaardenAnnuleer.addEventListener("click", () => {
         voorwaardenOverlay.classList.add("hidden");
-        selectedLocation = null;
         document.body.classList.remove("no-scroll");
       });
     }
@@ -141,19 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
         voorwaardenOverlay.classList.add("hidden");
         document.body.classList.remove("no-scroll");
 
-        if (!selectedLocation) return;
+        // If the Aimy container actually exists on this page, show it.
+        if (aimyContainer) {
+          if (reserveerIntro) reserveerIntro.style.display = "none";
+          // Hide all trigger buttons on the page so they don't clutter the view
+          reserveerTriggers.forEach((t) => (t.style.display = "none"));
 
-        const knop = ycbButtons[selectedLocation];
-        if (knop) {
-          knop.click();
+          aimyContainer.classList.remove("hidden");
+          aimyContainer.scrollIntoView({ behavior: "smooth" });
         } else {
-          const baseUrl =
-            selectedLocation === "amsterdam"
-              ? "https://wendyamsterdam.ycb.me"
-              : "https://wendybadhoevedorp.ycb.me";
-          window.open(baseUrl, "_blank");
+          // Failsafe: If clicked on a page without the iframe, send them to the reservation page
+          window.location.href = "reserveringen.html";
         }
-        selectedLocation = null;
       });
     }
   }

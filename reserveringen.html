@@ -66,10 +66,10 @@
         </button>
 
         <nav class="nav-menu">
-          <a href="index.html" class="active">Home</a>
+          <a href="index.html">Home</a>
           <a href="over-ons.html">Over ons</a>
           <a href="contact.html">Contact</a>
-          <a href="reserveringen.html">Reserveer</a>
+          <a href="reserveringen.html" class="active">Reserveer</a>
           <a href="galerij.html">Galerij</a>
         </nav>
       </div>
@@ -77,64 +77,32 @@
 
     <main>
       <section class="hero" style="padding-bottom: 2em">
-        <h1>🎉 Kinderfeestje bij Wendy's</h1>
+        <h1>🎉 Reserveer je afspraak</h1>
         <p data-editable>
-          Een feestje vol lol, glitter en vrolijkheid. Boek direct en maak er
-          een dag van die niemand vergeet! ✂️✨
+          Een knipbeurt, een feestje vol lol, glitter en vrolijkheid... Boek
+          direct en we maken er iets moois van! ✂️✨
         </p>
       </section>
 
       <section class="reserveer" style="text-align: center; padding-top: 0">
-        <div style="margin-bottom: 3em">
-          <h2>📍 Amsterdam</h2>
+        <div id="reserveer-intro" style="margin-bottom: 3em">
+          <h2>📍 Boek je afspraak of feestje</h2>
           <p data-editable>
-            Knipbeurt? App ons. Voor feestjes klik je op de knop hieronder.
+            Klik op de knop hieronder, ga akkoord met de voorwaarden en plan
+            direct je afspraak of feestje in via ons systeem.
           </p>
-          <button
-            type="button"
-            class="btn reserveer-trigger"
-            data-locatie="amsterdam"
-          >
-            🎉 Reserveer nu je feestje | Amsterdam
+          <button type="button" class="btn" id="open-voorwaarden-btn">
+            🎉 Reserveer Nu
           </button>
         </div>
 
-        <div>
-          <h2>📍 Badhoevedorp</h2>
-          <p data-editable>
-            Knipbeurt? App ons. Voor feestjes klik je op de knop hieronder.
-          </p>
-          <button
-            type="button"
-            class="btn reserveer-trigger"
-            data-locatie="badhoevedorp"
-            style="background-color: #ffd700; color: #d10069"
-          >
-            🎉 Reserveer nu je feestje | Badhoevedorp
-          </button>
+        <div id="aimy-container" class="aimy-container hidden">
+          <iframe
+            src="https://booking.meetaimy.com/booking/salon-selection?salonId=NDY4NDEwNw%3D%3D&email=YW1zdGVyZGFtQHdlbmR5c2tpbmRlcmthcHNhbG9uLm5s"
+            title="Aimy Booking"
+          ></iframe>
         </div>
       </section>
-
-      <div id="ycb-hidden" style="display: none !important">
-        <div data-ycb="amsterdam">
-          <script
-            src="https://embed.ycb.me"
-            async
-            data-domain="wendyamsterdam"
-            data-type="button-link"
-            data-innertext="Reserveer Amsterdam"
-          ></script>
-        </div>
-        <div data-ycb="badhoevedorp">
-          <script
-            src="https://embed.ycb.me"
-            async
-            data-domain="wendybadhoevedorp"
-            data-type="button-link"
-            data-innertext="Reserveer Badhoevedorp"
-          ></script>
-        </div>
-      </div>
 
       <section class="feestjes" id="prijzen">
         <div class="feestjes-grid">
@@ -178,32 +146,13 @@
               </li>
             </ul>
 
-            <a
-              href="https://wa.me/31643203655?text=Ik%20wil%20graag%20een%20afspraak%20maken"
-              class="btn"
-              target="_blank"
-              rel="noopener"
-            >
-              📞 App voor een knipbeurt
-            </a>
-
             <hr class="divider" />
 
             <h3>🎉 Prijzen Feestjes</h3>
             <ul class="prijs-lijst" data-editable>
               <li data-editable>
                 <span class="omschrijving"
-                  ><strong>Beauty & Foto Party</strong> (t/m 8 pers)</span
-                ><span class="prijs">€300</span>
-              </li>
-              <li data-editable>
-                <span class="omschrijving">Per extra kind</span
-                ><span class="prijs">€20</span>
-              </li>
-
-              <li style="margin-top: 1em">
-                <span class="omschrijving"
-                  ><strong>Kpop & Spa Party</strong> (t/m 8 pers)</span
+                  ><strong>Party</strong> (t/m 8 pers)</span
                 ><span class="prijs">€325</span>
               </li>
               <li data-editable>
@@ -225,6 +174,14 @@
               <li data-editable>
                 <span class="omschrijving">Cupcake-pakket</span
                 ><span class="prijs">€15</span>
+              </li>
+              <li data-editable>
+                <span class="omschrijving">Poffertjes-pakket (8 stuks)</span
+                ><span class="prijs">€25</span>
+              </li>
+              <li data-editable>
+                <span class="omschrijving">Per kind extra voor poffertjes</span
+                ><span class="prijs">€3,15</span>
               </li>
               <li data-editable>
                 <span class="omschrijving">Luxe goodie bag</span
