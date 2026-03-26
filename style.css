@@ -257,7 +257,7 @@ section {
   text-align: left;
   width: 100%;
   padding-left: 1.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .feest-box li {
@@ -273,7 +273,7 @@ section {
   object-fit: cover; /* Vul het vakje volledig (geen randjes) */
   object-position: top center; /* BELANGRIJK: Focus op de bovenkant (hoofden), snij benen eraf */
   border-radius: 10px;
-  margin-top: auto; /* Duwt foto netjes naar beneden */
+  margin-top: 1em; /* Kleine marge boven de foto */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -309,7 +309,7 @@ section {
 .button {
   display: block;
   width: fit-content;
-  margin: 1.5em auto;
+  margin: 1em auto; /* Zorg voor een nette marge */
   background: #ff69b4;
   color: white;
   padding: 0.8em 2em;
@@ -324,6 +324,11 @@ section {
   transition: transform 0.2s, background 0.2s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+/* Duw knop en/of foto naar de bodem */
+.feest-box .btn {
+  margin-top: auto;
 }
 
 .btn:hover {
